@@ -1,0 +1,1547 @@
+	.headerflags	@"EF_CUDA_TEXMODE_UNIFIED EF_CUDA_64BIT_ADDRESS EF_CUDA_SM86 EF_CUDA_VIRTUAL_SM(EF_CUDA_SM86)"
+	.elftype	@"ET_EXEC"
+
+
+//--------------------- .text.debug_timer_globaltimer_kernel --------------------------
+	.section	.text.debug_timer_globaltimer_kernel,"ax",@progbits
+	.sectioninfo	@"SHI_REGISTERS=16"
+	.align	128
+        .global         debug_timer_globaltimer_kernel
+        .type           debug_timer_globaltimer_kernel,@function
+        .size           debug_timer_globaltimer_kernel,(.L_x_3 - debug_timer_globaltimer_kernel)
+        .other          debug_timer_globaltimer_kernel,@"STO_CUDA_ENTRY STV_DEFAULT"
+debug_timer_globaltimer_kernel:
+.text.debug_timer_globaltimer_kernel:
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 39
+        /*0000*/                   MOV R1, c[0x0][0x28] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 44
+        /*0010*/                   S2R R0, SR_TID.X ;
+        /*0020*/                   ULDC.64 UR4, c[0x0][0x118] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 43
+        /*0030*/                   S2R R3, SR_CTAID.X ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 44
+        /*0040*/                   LOP3.LUT R0, R0, 0x1f, RZ, 0xc0, !PT ;
+        /*0050*/                   LEA R0, R3, R0, 0x5 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 45
+        /*0060*/                   ISETP.GE.AND P2, PT, R0, 0x20, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0070*/                   CS2R R2, SR_GLOBALTIMERLO ;
+        /*0080*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0090*/                   IADD3 R6, P0, -R2, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*00a0*/                   ISETP.LT.U32.AND P1, PT, R6, -0x1, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*00b0*/                   IADD3.X R7, ~R3, R5, RZ, P0, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*00c0*/                   ISETP.NE.U32.AND P0, PT, R4, R2, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*00d0*/                   ISETP.LT.U32.AND.EX P1, PT, R7, 0x7fffffff, PT, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*00e0*/                   ISETP.NE.AND.EX P0, PT, R5, R3, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*00f0*/                   SEL R2, R6, 0xffffffff, P1 ;
+        /*0100*/                   SEL R3, R7, 0x7fffffff, P1 ;
+        /*0110*/                   SEL R2, R2, 0xffffffff, P0 ;
+        /*0120*/                   SEL R3, R3, 0x7fffffff, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0130*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0140*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0150*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0160*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0170*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0180*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0190*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*01a0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*01b0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*01c0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*01d0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*01e0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*01f0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0200*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0210*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0220*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0230*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0240*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0250*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0260*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0270*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0280*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0290*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*02a0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*02b0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*02c0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*02d0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*02e0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*02f0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0300*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0310*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0320*/                   IMAD.X R6, R5, 0x1, ~R7, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0330*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0340*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0350*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0360*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0370*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0380*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0390*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*03a0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*03b0*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*03c0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*03d0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*03e0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*03f0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0400*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0410*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0420*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0430*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0440*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0450*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0460*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0470*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0480*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0490*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*04a0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*04b0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*04c0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*04d0*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*04e0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*04f0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0500*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0510*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0520*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0530*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0540*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0550*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0560*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0570*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0580*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0590*/               @P0 SEL R2, R9, R2, P1 ;
+        /*05a0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*05b0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*05c0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*05d0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*05e0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*05f0*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0600*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0610*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0620*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0630*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0640*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0650*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0660*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0670*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0680*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0690*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*06a0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*06b0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*06c0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*06d0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*06e0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*06f0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0700*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0710*/                   IMAD.X R4, R7, 0x1, ~R5, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0720*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0730*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0740*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0750*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0760*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0770*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0780*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0790*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*07a0*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*07b0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*07c0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*07d0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*07e0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*07f0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0800*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0810*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0820*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0830*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0840*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0850*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0860*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0870*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0880*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0890*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*08a0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*08b0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*08c0*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*08d0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*08e0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*08f0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0900*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0910*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0920*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0930*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0940*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0950*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0960*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0970*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0980*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0990*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*09a0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*09b0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*09c0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*09d0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*09e0*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*09f0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0a00*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0a10*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0a20*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0a30*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0a40*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0a50*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0a60*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0a70*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0a80*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0a90*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0aa0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0ab0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0ac0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0ad0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0ae0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0af0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0b00*/                   IMAD.X R6, R5, 0x1, ~R7, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0b10*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0b20*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0b30*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0b40*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0b50*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0b60*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0b70*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0b80*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0b90*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0ba0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0bb0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0bc0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0bd0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0be0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0bf0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0c00*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0c10*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0c20*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0c30*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0c40*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0c50*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0c60*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0c70*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0c80*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0c90*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0ca0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0cb0*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0cc0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0cd0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0ce0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0cf0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0d00*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0d10*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0d20*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0d30*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0d40*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0d50*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0d60*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0d70*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0d80*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0d90*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0da0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0db0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0dc0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0dd0*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0de0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0df0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0e00*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0e10*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0e20*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0e30*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0e40*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0e50*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0e60*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0e70*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0e80*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0e90*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0ea0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0eb0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0ec0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0ed0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0ee0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0ef0*/                   IMAD.X R4, R7, 0x1, ~R5, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0f00*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0f10*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*0f20*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0f30*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0f40*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0f50*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0f60*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0f70*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0f80*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*0f90*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*0fa0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*0fb0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*0fc0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*0fd0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*0fe0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*0ff0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1000*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1010*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1020*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1030*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1040*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1050*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1060*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1070*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1080*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1090*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*10a0*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*10b0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*10c0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*10d0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*10e0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*10f0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1100*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1110*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1120*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1130*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1140*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1150*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1160*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1170*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1180*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1190*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*11a0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*11b0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*11c0*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*11d0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*11e0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*11f0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1200*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1210*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1220*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1230*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1240*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1250*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1260*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1270*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1280*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1290*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*12a0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*12b0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*12c0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*12d0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*12e0*/                   IMAD.X R6, R5, 0x1, ~R7, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*12f0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1300*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1310*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1320*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1330*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1340*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1350*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1360*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1370*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1380*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1390*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*13a0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*13b0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*13c0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*13d0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*13e0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*13f0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1400*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1410*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1420*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1430*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1440*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1450*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1460*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1470*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1480*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1490*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*14a0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*14b0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*14c0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*14d0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*14e0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*14f0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1500*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1510*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1520*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1530*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1540*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1550*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1560*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1570*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1580*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1590*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*15a0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*15b0*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*15c0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*15d0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*15e0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*15f0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1600*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1610*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1620*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1630*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1640*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1650*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1660*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1670*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1680*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1690*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*16a0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*16b0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*16c0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*16d0*/                   IMAD.X R4, R7, 0x1, ~R5, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*16e0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*16f0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1700*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1710*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1720*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1730*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1740*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1750*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1760*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1770*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1780*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1790*/               @P0 SEL R2, R9, R2, P1 ;
+        /*17a0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*17b0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*17c0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*17d0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*17e0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*17f0*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1800*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1810*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1820*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1830*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1840*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1850*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1860*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1870*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1880*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1890*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*18a0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*18b0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*18c0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*18d0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*18e0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*18f0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1900*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1910*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1920*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1930*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1940*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1950*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1960*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1970*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1980*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1990*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*19a0*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*19b0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*19c0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*19d0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*19e0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*19f0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1a00*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1a10*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1a20*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1a30*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1a40*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1a50*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1a60*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1a70*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1a80*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1a90*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1aa0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1ab0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1ac0*/                   IMAD.X R6, R5, 0x1, ~R7, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1ad0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1ae0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1af0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1b00*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1b10*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1b20*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1b30*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1b40*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1b50*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1b60*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1b70*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1b80*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1b90*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1ba0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1bb0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1bc0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1bd0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1be0*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1bf0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1c00*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1c10*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1c20*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1c30*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1c40*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1c50*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1c60*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1c70*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1c80*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1c90*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1ca0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1cb0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1cc0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1cd0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1ce0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1cf0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1d00*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1d10*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1d20*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1d30*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1d40*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1d50*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1d60*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1d70*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1d80*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1d90*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1da0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1db0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1dc0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1dd0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1de0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1df0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1e00*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1e10*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1e20*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1e30*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1e40*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1e50*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1e60*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1e70*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1e80*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1e90*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1ea0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1eb0*/                   IMAD.X R4, R7, 0x1, ~R5, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1ec0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1ed0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*1ee0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1ef0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1f00*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1f10*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1f20*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1f30*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1f40*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1f50*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1f60*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*1f70*/               @P0 SEL R2, R9, R2, P1 ;
+        /*1f80*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*1f90*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1fa0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1fb0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*1fc0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*1fd0*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*1fe0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*1ff0*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*2000*/               @P0 SEL R2, R9, R2, P1 ;
+        /*2010*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*2020*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2030*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2040*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2050*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2060*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*2070*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*2080*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*2090*/               @P0 SEL R2, R9, R2, P1 ;
+        /*20a0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*20b0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*20c0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*20d0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*20e0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*20f0*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*2100*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*2110*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*2120*/               @P0 SEL R2, R9, R2, P1 ;
+        /*2130*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*2140*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2150*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2160*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2170*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2180*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*2190*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*21a0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*21b0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*21c0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*21d0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*21e0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*21f0*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2200*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2210*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*2220*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*2230*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*2240*/               @P0 SEL R2, R9, R2, P1 ;
+        /*2250*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*2260*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2270*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2280*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2290*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*22a0*/                   IMAD.X R6, R5, 0x1, ~R7, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*22b0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*22c0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*22d0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*22e0*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*22f0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2300*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2310*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2320*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2330*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*2340*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*2350*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+        /*2360*/               @P0 SEL R2, R9, R2, P1 ;
+        /*2370*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*2380*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2390*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*23a0*/                   IADD3 R9, P1, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*23b0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*23c0*/                   IADD3.X R6, ~R7, R5, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*23d0*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+        /*23e0*/                   ISETP.LT.U32.AND.EX P1, PT, R6, R3, PT, P1 ;
+        /*23f0*/               @P0 SEL R2, R9, R2, P1 ;
+        /*2400*/               @P0 SEL R3, R6, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*2410*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2420*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 59
+        /*2430*/                   BSSY B0, `(.L_x_0) ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2440*/                   IADD3 R9, P1, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 54
+        /*2450*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 52
+        /*2460*/                   IADD3.X R4, ~R5, R7, RZ, P1, !PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*2470*/                   ISETP.LT.U32.AND P1, PT, R9, R2, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 56
+        /*2480*/                   MOV R7, 0x8 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*2490*/                   ISETP.LT.U32.AND.EX P1, PT, R4, R3, PT, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 59
+        /*24a0*/                   MOV R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*24b0*/               @P0 SEL R3, R4, R3, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 56
+        /*24c0*/                   IMAD.WIDE R4, R0, R7, c[0x0][0x178] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 55
+        /*24d0*/               @P0 SEL R2, R9, R2, P1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 59
+        /*24e0*/                   MOV R9, 0x4 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 56
+        /*24f0*/              @!P2 STG.E.64 [R4.64], R2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 59
+        /*2500*/                   IMAD.WIDE R2, R0, R9, c[0x0][0x160] ;
+        /*2510*/               @P2 BRA `(.L_x_1) ;
+        /*2520*/                   LDG.E R6, [R2.64] ;
+.L_x_1:
+        /*2530*/                   BSYNC B0 ;
+.L_x_0:
+        /*2540*/                   SEL R6, R6, RZ, !P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*2550*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 62
+        /*2560*/                   FADD R6, R6, 1 ;
+        /*2570*/                   FADD R6, R6, 1 ;
+        /*2580*/                   FADD R6, R6, 1 ;
+        /*2590*/                   FADD R6, R6, 1 ;
+        /*25a0*/                   FADD R6, R6, 1 ;
+        /*25b0*/                   FADD R6, R6, 1 ;
+        /*25c0*/                   FADD R6, R6, 1 ;
+        /*25d0*/                   FADD R6, R6, 1 ;
+        /*25e0*/                   FADD R6, R6, 1 ;
+        /*25f0*/                   FADD R6, R6, 1 ;
+        /*2600*/                   FADD R6, R6, 1 ;
+        /*2610*/                   FADD R6, R6, 1 ;
+        /*2620*/                   FADD R6, R6, 1 ;
+        /*2630*/                   FADD R6, R6, 1 ;
+        /*2640*/                   FADD R6, R6, 1 ;
+        /*2650*/                   FADD R6, R6, 1 ;
+        /*2660*/                   FADD R6, R6, 1 ;
+        /*2670*/                   FADD R6, R6, 1 ;
+        /*2680*/                   FADD R6, R6, 1 ;
+        /*2690*/                   FADD R6, R6, 1 ;
+        /*26a0*/                   FADD R6, R6, 1 ;
+        /*26b0*/                   FADD R6, R6, 1 ;
+        /*26c0*/                   FADD R6, R6, 1 ;
+        /*26d0*/                   FADD R6, R6, 1 ;
+        /*26e0*/                   FADD R6, R6, 1 ;
+        /*26f0*/                   FADD R6, R6, 1 ;
+        /*2700*/                   FADD R6, R6, 1 ;
+        /*2710*/                   FADD R6, R6, 1 ;
+        /*2720*/                   FADD R6, R6, 1 ;
+        /*2730*/                   FADD R6, R6, 1 ;
+        /*2740*/                   FADD R6, R6, 1 ;
+        /*2750*/                   FADD R6, R6, 1 ;
+        /*2760*/                   FADD R6, R6, 1 ;
+        /*2770*/                   FADD R6, R6, 1 ;
+        /*2780*/                   FADD R6, R6, 1 ;
+        /*2790*/                   FADD R6, R6, 1 ;
+        /*27a0*/                   FADD R6, R6, 1 ;
+        /*27b0*/                   FADD R6, R6, 1 ;
+        /*27c0*/                   FADD R6, R6, 1 ;
+        /*27d0*/                   FADD R6, R6, 1 ;
+        /*27e0*/                   FADD R6, R6, 1 ;
+        /*27f0*/                   FADD R6, R6, 1 ;
+        /*2800*/                   FADD R6, R6, 1 ;
+        /*2810*/                   FADD R6, R6, 1 ;
+        /*2820*/                   FADD R6, R6, 1 ;
+        /*2830*/                   FADD R6, R6, 1 ;
+        /*2840*/                   FADD R6, R6, 1 ;
+        /*2850*/                   FADD R6, R6, 1 ;
+        /*2860*/                   FADD R6, R6, 1 ;
+        /*2870*/                   FADD R6, R6, 1 ;
+        /*2880*/                   FADD R6, R6, 1 ;
+        /*2890*/                   FADD R6, R6, 1 ;
+        /*28a0*/                   FADD R6, R6, 1 ;
+        /*28b0*/                   FADD R6, R6, 1 ;
+        /*28c0*/                   FADD R6, R6, 1 ;
+        /*28d0*/                   FADD R6, R6, 1 ;
+        /*28e0*/                   FADD R6, R6, 1 ;
+        /*28f0*/                   FADD R6, R6, 1 ;
+        /*2900*/                   FADD R6, R6, 1 ;
+        /*2910*/                   FADD R6, R6, 1 ;
+        /*2920*/                   FADD R6, R6, 1 ;
+        /*2930*/                   FADD R6, R6, 1 ;
+        /*2940*/                   FADD R6, R6, 1 ;
+        /*2950*/                   FADD R6, R6, 1 ;
+        /*2960*/                   FADD R6, R6, 1 ;
+        /*2970*/                   FADD R6, R6, 1 ;
+        /*2980*/                   FADD R6, R6, 1 ;
+        /*2990*/                   FADD R6, R6, 1 ;
+        /*29a0*/                   FADD R6, R6, 1 ;
+        /*29b0*/                   FADD R6, R6, 1 ;
+        /*29c0*/                   FADD R6, R6, 1 ;
+        /*29d0*/                   FADD R6, R6, 1 ;
+        /*29e0*/                   FADD R6, R6, 1 ;
+        /*29f0*/                   FADD R6, R6, 1 ;
+        /*2a00*/                   FADD R6, R6, 1 ;
+        /*2a10*/                   FADD R6, R6, 1 ;
+        /*2a20*/                   FADD R6, R6, 1 ;
+        /*2a30*/                   FADD R6, R6, 1 ;
+        /*2a40*/                   FADD R6, R6, 1 ;
+        /*2a50*/                   FADD R6, R6, 1 ;
+        /*2a60*/                   FADD R6, R6, 1 ;
+        /*2a70*/                   FADD R6, R6, 1 ;
+        /*2a80*/                   FADD R6, R6, 1 ;
+        /*2a90*/                   FADD R6, R6, 1 ;
+        /*2aa0*/                   FADD R6, R6, 1 ;
+        /*2ab0*/                   FADD R6, R6, 1 ;
+        /*2ac0*/                   FADD R6, R6, 1 ;
+        /*2ad0*/                   FADD R6, R6, 1 ;
+        /*2ae0*/                   FADD R6, R6, 1 ;
+        /*2af0*/                   FADD R6, R6, 1 ;
+        /*2b00*/                   FADD R6, R6, 1 ;
+        /*2b10*/                   FADD R6, R6, 1 ;
+        /*2b20*/                   FADD R6, R6, 1 ;
+        /*2b30*/                   FADD R6, R6, 1 ;
+        /*2b40*/                   FADD R6, R6, 1 ;
+        /*2b50*/                   FADD R6, R6, 1 ;
+        /*2b60*/                   FADD R6, R6, 1 ;
+        /*2b70*/                   FADD R6, R6, 1 ;
+        /*2b80*/                   FADD R6, R6, 1 ;
+        /*2b90*/                   FADD R6, R6, 1 ;
+        /*2ba0*/                   FADD R6, R6, 1 ;
+        /*2bb0*/                   FADD R6, R6, 1 ;
+        /*2bc0*/                   FADD R6, R6, 1 ;
+        /*2bd0*/                   FADD R6, R6, 1 ;
+        /*2be0*/                   FADD R6, R6, 1 ;
+        /*2bf0*/                   FADD R6, R6, 1 ;
+        /*2c00*/                   FADD R6, R6, 1 ;
+        /*2c10*/                   FADD R6, R6, 1 ;
+        /*2c20*/                   FADD R6, R6, 1 ;
+        /*2c30*/                   FADD R6, R6, 1 ;
+        /*2c40*/                   FADD R6, R6, 1 ;
+        /*2c50*/                   FADD R6, R6, 1 ;
+        /*2c60*/                   FADD R6, R6, 1 ;
+        /*2c70*/                   FADD R6, R6, 1 ;
+        /*2c80*/                   FADD R6, R6, 1 ;
+        /*2c90*/                   FADD R6, R6, 1 ;
+        /*2ca0*/                   FADD R6, R6, 1 ;
+        /*2cb0*/                   FADD R6, R6, 1 ;
+        /*2cc0*/                   FADD R6, R6, 1 ;
+        /*2cd0*/                   FADD R6, R6, 1 ;
+        /*2ce0*/                   FADD R6, R6, 1 ;
+        /*2cf0*/                   FADD R6, R6, 1 ;
+        /*2d00*/                   FADD R6, R6, 1 ;
+        /*2d10*/                   FADD R6, R6, 1 ;
+        /*2d20*/                   FADD R6, R6, 1 ;
+        /*2d30*/                   FADD R6, R6, 1 ;
+        /*2d40*/                   FADD R6, R6, 1 ;
+        /*2d50*/                   FADD R6, R6, 1 ;
+        /*2d60*/                   FADD R6, R6, 1 ;
+        /*2d70*/                   FADD R6, R6, 1 ;
+        /*2d80*/                   FADD R6, R6, 1 ;
+        /*2d90*/                   FADD R6, R6, 1 ;
+        /*2da0*/                   FADD R6, R6, 1 ;
+        /*2db0*/                   FADD R6, R6, 1 ;
+        /*2dc0*/                   FADD R6, R6, 1 ;
+        /*2dd0*/                   FADD R6, R6, 1 ;
+        /*2de0*/                   FADD R6, R6, 1 ;
+        /*2df0*/                   FADD R6, R6, 1 ;
+        /*2e00*/                   FADD R6, R6, 1 ;
+        /*2e10*/                   FADD R6, R6, 1 ;
+        /*2e20*/                   FADD R6, R6, 1 ;
+        /*2e30*/                   FADD R6, R6, 1 ;
+        /*2e40*/                   FADD R6, R6, 1 ;
+        /*2e50*/                   FADD R6, R6, 1 ;
+        /*2e60*/                   FADD R6, R6, 1 ;
+        /*2e70*/                   FADD R6, R6, 1 ;
+        /*2e80*/                   FADD R6, R6, 1 ;
+        /*2e90*/                   FADD R6, R6, 1 ;
+        /*2ea0*/                   FADD R6, R6, 1 ;
+        /*2eb0*/                   FADD R6, R6, 1 ;
+        /*2ec0*/                   FADD R6, R6, 1 ;
+        /*2ed0*/                   FADD R6, R6, 1 ;
+        /*2ee0*/                   FADD R6, R6, 1 ;
+        /*2ef0*/                   FADD R6, R6, 1 ;
+        /*2f00*/                   FADD R6, R6, 1 ;
+        /*2f10*/                   FADD R6, R6, 1 ;
+        /*2f20*/                   FADD R6, R6, 1 ;
+        /*2f30*/                   FADD R6, R6, 1 ;
+        /*2f40*/                   FADD R6, R6, 1 ;
+        /*2f50*/                   FADD R6, R6, 1 ;
+        /*2f60*/                   FADD R6, R6, 1 ;
+        /*2f70*/                   FADD R6, R6, 1 ;
+        /*2f80*/                   FADD R6, R6, 1 ;
+        /*2f90*/                   FADD R6, R6, 1 ;
+        /*2fa0*/                   FADD R6, R6, 1 ;
+        /*2fb0*/                   FADD R6, R6, 1 ;
+        /*2fc0*/                   FADD R6, R6, 1 ;
+        /*2fd0*/                   FADD R6, R6, 1 ;
+        /*2fe0*/                   FADD R6, R6, 1 ;
+        /*2ff0*/                   FADD R6, R6, 1 ;
+        /*3000*/                   FADD R6, R6, 1 ;
+        /*3010*/                   FADD R6, R6, 1 ;
+        /*3020*/                   FADD R6, R6, 1 ;
+        /*3030*/                   FADD R6, R6, 1 ;
+        /*3040*/                   FADD R6, R6, 1 ;
+        /*3050*/                   FADD R6, R6, 1 ;
+        /*3060*/                   FADD R6, R6, 1 ;
+        /*3070*/                   FADD R6, R6, 1 ;
+        /*3080*/                   FADD R6, R6, 1 ;
+        /*3090*/                   FADD R6, R6, 1 ;
+        /*30a0*/                   FADD R6, R6, 1 ;
+        /*30b0*/                   FADD R6, R6, 1 ;
+        /*30c0*/                   FADD R6, R6, 1 ;
+        /*30d0*/                   FADD R6, R6, 1 ;
+        /*30e0*/                   FADD R6, R6, 1 ;
+        /*30f0*/                   FADD R6, R6, 1 ;
+        /*3100*/                   FADD R6, R6, 1 ;
+        /*3110*/                   FADD R6, R6, 1 ;
+        /*3120*/                   FADD R6, R6, 1 ;
+        /*3130*/                   FADD R6, R6, 1 ;
+        /*3140*/                   FADD R6, R6, 1 ;
+        /*3150*/                   FADD R6, R6, 1 ;
+        /*3160*/                   FADD R6, R6, 1 ;
+        /*3170*/                   FADD R6, R6, 1 ;
+        /*3180*/                   FADD R6, R6, 1 ;
+        /*3190*/                   FADD R6, R6, 1 ;
+        /*31a0*/                   FADD R6, R6, 1 ;
+        /*31b0*/                   FADD R6, R6, 1 ;
+        /*31c0*/                   FADD R6, R6, 1 ;
+        /*31d0*/                   FADD R6, R6, 1 ;
+        /*31e0*/                   FADD R6, R6, 1 ;
+        /*31f0*/                   FADD R6, R6, 1 ;
+        /*3200*/                   FADD R6, R6, 1 ;
+        /*3210*/                   FADD R6, R6, 1 ;
+        /*3220*/                   FADD R6, R6, 1 ;
+        /*3230*/                   FADD R6, R6, 1 ;
+        /*3240*/                   FADD R6, R6, 1 ;
+        /*3250*/                   FADD R6, R6, 1 ;
+        /*3260*/                   FADD R6, R6, 1 ;
+        /*3270*/                   FADD R6, R6, 1 ;
+        /*3280*/                   FADD R6, R6, 1 ;
+        /*3290*/                   FADD R6, R6, 1 ;
+        /*32a0*/                   FADD R6, R6, 1 ;
+        /*32b0*/                   FADD R6, R6, 1 ;
+        /*32c0*/                   FADD R6, R6, 1 ;
+        /*32d0*/                   FADD R6, R6, 1 ;
+        /*32e0*/                   FADD R6, R6, 1 ;
+        /*32f0*/                   FADD R6, R6, 1 ;
+        /*3300*/                   FADD R6, R6, 1 ;
+        /*3310*/                   FADD R6, R6, 1 ;
+        /*3320*/                   FADD R6, R6, 1 ;
+        /*3330*/                   FADD R6, R6, 1 ;
+        /*3340*/                   FADD R6, R6, 1 ;
+        /*3350*/                   FADD R6, R6, 1 ;
+        /*3360*/                   FADD R6, R6, 1 ;
+        /*3370*/                   FADD R6, R6, 1 ;
+        /*3380*/                   FADD R6, R6, 1 ;
+        /*3390*/                   FADD R6, R6, 1 ;
+        /*33a0*/                   FADD R6, R6, 1 ;
+        /*33b0*/                   FADD R6, R6, 1 ;
+        /*33c0*/                   FADD R6, R6, 1 ;
+        /*33d0*/                   FADD R6, R6, 1 ;
+        /*33e0*/                   FADD R6, R6, 1 ;
+        /*33f0*/                   FADD R6, R6, 1 ;
+        /*3400*/                   FADD R6, R6, 1 ;
+        /*3410*/                   FADD R6, R6, 1 ;
+        /*3420*/                   FADD R6, R6, 1 ;
+        /*3430*/                   FADD R6, R6, 1 ;
+        /*3440*/                   FADD R6, R6, 1 ;
+        /*3450*/                   FADD R6, R6, 1 ;
+        /*3460*/                   FADD R6, R6, 1 ;
+        /*3470*/                   FADD R6, R6, 1 ;
+        /*3480*/                   FADD R6, R6, 1 ;
+        /*3490*/                   FADD R6, R6, 1 ;
+        /*34a0*/                   FADD R6, R6, 1 ;
+        /*34b0*/                   FADD R6, R6, 1 ;
+        /*34c0*/                   FADD R6, R6, 1 ;
+        /*34d0*/                   FADD R6, R6, 1 ;
+        /*34e0*/                   FADD R6, R6, 1 ;
+        /*34f0*/                   FADD R6, R6, 1 ;
+        /*3500*/                   FADD R6, R6, 1 ;
+        /*3510*/                   FADD R6, R6, 1 ;
+        /*3520*/                   FADD R6, R6, 1 ;
+        /*3530*/                   FADD R6, R6, 1 ;
+        /*3540*/                   FADD R6, R6, 1 ;
+        /*3550*/                   FADD R6, R6, 1 ;
+        /*3560*/                   FADD R6, R6, 1 ;
+        /*3570*/                   FADD R6, R6, 1 ;
+        /*3580*/                   FADD R6, R6, 1 ;
+        /*3590*/                   FADD R6, R6, 1 ;
+        /*35a0*/                   FADD R6, R6, 1 ;
+        /*35b0*/                   FADD R6, R6, 1 ;
+        /*35c0*/                   FADD R6, R6, 1 ;
+        /*35d0*/                   FADD R6, R6, 1 ;
+        /*35e0*/                   FADD R6, R6, 1 ;
+        /*35f0*/                   FADD R6, R6, 1 ;
+        /*3600*/                   FADD R6, R6, 1 ;
+        /*3610*/                   FADD R6, R6, 1 ;
+        /*3620*/                   FADD R6, R6, 1 ;
+        /*3630*/                   FADD R6, R6, 1 ;
+        /*3640*/                   FADD R6, R6, 1 ;
+        /*3650*/                   FADD R6, R6, 1 ;
+        /*3660*/                   FADD R6, R6, 1 ;
+        /*3670*/                   FADD R6, R6, 1 ;
+        /*3680*/                   FADD R6, R6, 1 ;
+        /*3690*/                   FADD R6, R6, 1 ;
+        /*36a0*/                   FADD R6, R6, 1 ;
+        /*36b0*/                   FADD R6, R6, 1 ;
+        /*36c0*/                   FADD R6, R6, 1 ;
+        /*36d0*/                   FADD R6, R6, 1 ;
+        /*36e0*/                   FADD R6, R6, 1 ;
+        /*36f0*/                   FADD R6, R6, 1 ;
+        /*3700*/                   FADD R6, R6, 1 ;
+        /*3710*/                   FADD R6, R6, 1 ;
+        /*3720*/                   FADD R6, R6, 1 ;
+        /*3730*/                   FADD R6, R6, 1 ;
+        /*3740*/                   FADD R6, R6, 1 ;
+        /*3750*/                   FADD R6, R6, 1 ;
+        /*3760*/                   FADD R6, R6, 1 ;
+        /*3770*/                   FADD R6, R6, 1 ;
+        /*3780*/                   FADD R6, R6, 1 ;
+        /*3790*/                   FADD R6, R6, 1 ;
+        /*37a0*/                   FADD R6, R6, 1 ;
+        /*37b0*/                   FADD R6, R6, 1 ;
+        /*37c0*/                   FADD R6, R6, 1 ;
+        /*37d0*/                   FADD R6, R6, 1 ;
+        /*37e0*/                   FADD R6, R6, 1 ;
+        /*37f0*/                   FADD R6, R6, 1 ;
+        /*3800*/                   FADD R6, R6, 1 ;
+        /*3810*/                   FADD R6, R6, 1 ;
+        /*3820*/                   FADD R6, R6, 1 ;
+        /*3830*/                   FADD R6, R6, 1 ;
+        /*3840*/                   FADD R6, R6, 1 ;
+        /*3850*/                   FADD R6, R6, 1 ;
+        /*3860*/                   FADD R6, R6, 1 ;
+        /*3870*/                   FADD R6, R6, 1 ;
+        /*3880*/                   FADD R6, R6, 1 ;
+        /*3890*/                   FADD R6, R6, 1 ;
+        /*38a0*/                   FADD R6, R6, 1 ;
+        /*38b0*/                   FADD R6, R6, 1 ;
+        /*38c0*/                   FADD R6, R6, 1 ;
+        /*38d0*/                   FADD R6, R6, 1 ;
+        /*38e0*/                   FADD R6, R6, 1 ;
+        /*38f0*/                   FADD R6, R6, 1 ;
+        /*3900*/                   FADD R6, R6, 1 ;
+        /*3910*/                   FADD R6, R6, 1 ;
+        /*3920*/                   FADD R6, R6, 1 ;
+        /*3930*/                   FADD R6, R6, 1 ;
+        /*3940*/                   FADD R6, R6, 1 ;
+        /*3950*/                   FADD R6, R6, 1 ;
+        /*3960*/                   FADD R6, R6, 1 ;
+        /*3970*/                   FADD R6, R6, 1 ;
+        /*3980*/                   FADD R6, R6, 1 ;
+        /*3990*/                   FADD R6, R6, 1 ;
+        /*39a0*/                   FADD R6, R6, 1 ;
+        /*39b0*/                   FADD R6, R6, 1 ;
+        /*39c0*/                   FADD R6, R6, 1 ;
+        /*39d0*/                   FADD R6, R6, 1 ;
+        /*39e0*/                   FADD R6, R6, 1 ;
+        /*39f0*/                   FADD R6, R6, 1 ;
+        /*3a00*/                   FADD R6, R6, 1 ;
+        /*3a10*/                   FADD R6, R6, 1 ;
+        /*3a20*/                   FADD R6, R6, 1 ;
+        /*3a30*/                   FADD R6, R6, 1 ;
+        /*3a40*/                   FADD R6, R6, 1 ;
+        /*3a50*/                   FADD R6, R6, 1 ;
+        /*3a60*/                   FADD R6, R6, 1 ;
+        /*3a70*/                   FADD R6, R6, 1 ;
+        /*3a80*/                   FADD R6, R6, 1 ;
+        /*3a90*/                   FADD R6, R6, 1 ;
+        /*3aa0*/                   FADD R6, R6, 1 ;
+        /*3ab0*/                   FADD R6, R6, 1 ;
+        /*3ac0*/                   FADD R6, R6, 1 ;
+        /*3ad0*/                   FADD R6, R6, 1 ;
+        /*3ae0*/                   FADD R6, R6, 1 ;
+        /*3af0*/                   FADD R6, R6, 1 ;
+        /*3b00*/                   FADD R6, R6, 1 ;
+        /*3b10*/                   FADD R6, R6, 1 ;
+        /*3b20*/                   FADD R6, R6, 1 ;
+        /*3b30*/                   FADD R6, R6, 1 ;
+        /*3b40*/                   FADD R6, R6, 1 ;
+        /*3b50*/                   FADD R6, R6, 1 ;
+        /*3b60*/                   FADD R6, R6, 1 ;
+        /*3b70*/                   FADD R6, R6, 1 ;
+        /*3b80*/                   FADD R6, R6, 1 ;
+        /*3b90*/                   FADD R6, R6, 1 ;
+        /*3ba0*/                   FADD R6, R6, 1 ;
+        /*3bb0*/                   FADD R6, R6, 1 ;
+        /*3bc0*/                   FADD R6, R6, 1 ;
+        /*3bd0*/                   FADD R6, R6, 1 ;
+        /*3be0*/                   FADD R6, R6, 1 ;
+        /*3bf0*/                   FADD R6, R6, 1 ;
+        /*3c00*/                   FADD R6, R6, 1 ;
+        /*3c10*/                   FADD R6, R6, 1 ;
+        /*3c20*/                   FADD R6, R6, 1 ;
+        /*3c30*/                   FADD R6, R6, 1 ;
+        /*3c40*/                   FADD R6, R6, 1 ;
+        /*3c50*/                   FADD R6, R6, 1 ;
+        /*3c60*/                   FADD R6, R6, 1 ;
+        /*3c70*/                   FADD R6, R6, 1 ;
+        /*3c80*/                   FADD R6, R6, 1 ;
+        /*3c90*/                   FADD R6, R6, 1 ;
+        /*3ca0*/                   FADD R6, R6, 1 ;
+        /*3cb0*/                   FADD R6, R6, 1 ;
+        /*3cc0*/                   FADD R6, R6, 1 ;
+        /*3cd0*/                   FADD R6, R6, 1 ;
+        /*3ce0*/                   FADD R6, R6, 1 ;
+        /*3cf0*/                   FADD R6, R6, 1 ;
+        /*3d00*/                   FADD R6, R6, 1 ;
+        /*3d10*/                   FADD R6, R6, 1 ;
+        /*3d20*/                   FADD R6, R6, 1 ;
+        /*3d30*/                   FADD R6, R6, 1 ;
+        /*3d40*/                   FADD R6, R6, 1 ;
+        /*3d50*/                   FADD R6, R6, 1 ;
+        /*3d60*/                   FADD R6, R6, 1 ;
+        /*3d70*/                   FADD R6, R6, 1 ;
+        /*3d80*/                   FADD R6, R6, 1 ;
+        /*3d90*/                   FADD R6, R6, 1 ;
+        /*3da0*/                   FADD R6, R6, 1 ;
+        /*3db0*/                   FADD R6, R6, 1 ;
+        /*3dc0*/                   FADD R6, R6, 1 ;
+        /*3dd0*/                   FADD R6, R6, 1 ;
+        /*3de0*/                   FADD R6, R6, 1 ;
+        /*3df0*/                   FADD R6, R6, 1 ;
+        /*3e00*/                   FADD R6, R6, 1 ;
+        /*3e10*/                   FADD R6, R6, 1 ;
+        /*3e20*/                   FADD R6, R6, 1 ;
+        /*3e30*/                   FADD R6, R6, 1 ;
+        /*3e40*/                   FADD R6, R6, 1 ;
+        /*3e50*/                   FADD R6, R6, 1 ;
+        /*3e60*/                   FADD R6, R6, 1 ;
+        /*3e70*/                   FADD R6, R6, 1 ;
+        /*3e80*/                   FADD R6, R6, 1 ;
+        /*3e90*/                   FADD R6, R6, 1 ;
+        /*3ea0*/                   FADD R6, R6, 1 ;
+        /*3eb0*/                   FADD R6, R6, 1 ;
+        /*3ec0*/                   FADD R6, R6, 1 ;
+        /*3ed0*/                   FADD R6, R6, 1 ;
+        /*3ee0*/                   FADD R6, R6, 1 ;
+        /*3ef0*/                   FADD R6, R6, 1 ;
+        /*3f00*/                   FADD R6, R6, 1 ;
+        /*3f10*/                   FADD R6, R6, 1 ;
+        /*3f20*/                   FADD R6, R6, 1 ;
+        /*3f30*/                   FADD R6, R6, 1 ;
+        /*3f40*/                   FADD R6, R6, 1 ;
+        /*3f50*/                   FADD R6, R6, 1 ;
+        /*3f60*/                   FADD R6, R6, 1 ;
+        /*3f70*/                   FADD R6, R6, 1 ;
+        /*3f80*/                   FADD R6, R6, 1 ;
+        /*3f90*/                   FADD R6, R6, 1 ;
+        /*3fa0*/                   FADD R6, R6, 1 ;
+        /*3fb0*/                   FADD R6, R6, 1 ;
+        /*3fc0*/                   FADD R6, R6, 1 ;
+        /*3fd0*/                   FADD R6, R6, 1 ;
+        /*3fe0*/                   FADD R6, R6, 1 ;
+        /*3ff0*/                   FADD R6, R6, 1 ;
+        /*4000*/                   FADD R6, R6, 1 ;
+        /*4010*/                   FADD R6, R6, 1 ;
+        /*4020*/                   FADD R6, R6, 1 ;
+        /*4030*/                   FADD R6, R6, 1 ;
+        /*4040*/                   FADD R6, R6, 1 ;
+        /*4050*/                   FADD R6, R6, 1 ;
+        /*4060*/                   FADD R6, R6, 1 ;
+        /*4070*/                   FADD R6, R6, 1 ;
+        /*4080*/                   FADD R6, R6, 1 ;
+        /*4090*/                   FADD R6, R6, 1 ;
+        /*40a0*/                   FADD R6, R6, 1 ;
+        /*40b0*/                   FADD R6, R6, 1 ;
+        /*40c0*/                   FADD R6, R6, 1 ;
+        /*40d0*/                   FADD R6, R6, 1 ;
+        /*40e0*/                   FADD R6, R6, 1 ;
+        /*40f0*/                   FADD R6, R6, 1 ;
+        /*4100*/                   FADD R6, R6, 1 ;
+        /*4110*/                   FADD R6, R6, 1 ;
+        /*4120*/                   FADD R6, R6, 1 ;
+        /*4130*/                   FADD R6, R6, 1 ;
+        /*4140*/                   FADD R6, R6, 1 ;
+        /*4150*/                   FADD R6, R6, 1 ;
+        /*4160*/                   FADD R6, R6, 1 ;
+        /*4170*/                   FADD R6, R6, 1 ;
+        /*4180*/                   FADD R6, R6, 1 ;
+        /*4190*/                   FADD R6, R6, 1 ;
+        /*41a0*/                   FADD R6, R6, 1 ;
+        /*41b0*/                   FADD R6, R6, 1 ;
+        /*41c0*/                   FADD R6, R6, 1 ;
+        /*41d0*/                   FADD R6, R6, 1 ;
+        /*41e0*/                   FADD R6, R6, 1 ;
+        /*41f0*/                   FADD R6, R6, 1 ;
+        /*4200*/                   FADD R6, R6, 1 ;
+        /*4210*/                   FADD R6, R6, 1 ;
+        /*4220*/                   FADD R6, R6, 1 ;
+        /*4230*/                   FADD R6, R6, 1 ;
+        /*4240*/                   FADD R6, R6, 1 ;
+        /*4250*/                   FADD R6, R6, 1 ;
+        /*4260*/                   FADD R6, R6, 1 ;
+        /*4270*/                   FADD R6, R6, 1 ;
+        /*4280*/                   FADD R6, R6, 1 ;
+        /*4290*/                   FADD R6, R6, 1 ;
+        /*42a0*/                   FADD R6, R6, 1 ;
+        /*42b0*/                   FADD R6, R6, 1 ;
+        /*42c0*/                   FADD R6, R6, 1 ;
+        /*42d0*/                   FADD R6, R6, 1 ;
+        /*42e0*/                   FADD R6, R6, 1 ;
+        /*42f0*/                   FADD R6, R6, 1 ;
+        /*4300*/                   FADD R6, R6, 1 ;
+        /*4310*/                   FADD R6, R6, 1 ;
+        /*4320*/                   FADD R6, R6, 1 ;
+        /*4330*/                   FADD R6, R6, 1 ;
+        /*4340*/                   FADD R6, R6, 1 ;
+        /*4350*/                   FADD R6, R6, 1 ;
+        /*4360*/                   FADD R6, R6, 1 ;
+        /*4370*/                   FADD R6, R6, 1 ;
+        /*4380*/                   FADD R6, R6, 1 ;
+        /*4390*/                   FADD R6, R6, 1 ;
+        /*43a0*/                   FADD R6, R6, 1 ;
+        /*43b0*/                   FADD R6, R6, 1 ;
+        /*43c0*/                   FADD R6, R6, 1 ;
+        /*43d0*/                   FADD R6, R6, 1 ;
+        /*43e0*/                   FADD R6, R6, 1 ;
+        /*43f0*/                   FADD R6, R6, 1 ;
+        /*4400*/                   FADD R6, R6, 1 ;
+        /*4410*/                   FADD R6, R6, 1 ;
+        /*4420*/                   FADD R6, R6, 1 ;
+        /*4430*/                   FADD R6, R6, 1 ;
+        /*4440*/                   FADD R6, R6, 1 ;
+        /*4450*/                   FADD R6, R6, 1 ;
+        /*4460*/                   FADD R6, R6, 1 ;
+        /*4470*/                   FADD R6, R6, 1 ;
+        /*4480*/                   FADD R6, R6, 1 ;
+        /*4490*/                   FADD R13, R6, 1 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 19
+        /*44a0*/                   CS2R R10, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 66
+        /*44b0*/                   IMAD.WIDE R8, R0.reuse, R7.reuse, c[0x0][0x168] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 64
+        /*44c0*/              @!P2 STG.E [R2.64], R13 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 67
+        /*44d0*/                   IMAD.WIDE R6, R0, R7, c[0x0][0x170] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 66
+        /*44e0*/              @!P2 STG.E.64 [R8.64], R4 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_test8.py", line 67
+        /*44f0*/               @P2 EXIT ;
+        /*4500*/                   STG.E.64 [R6.64], R10 ;
+        /*4510*/                   EXIT ;
+.L_x_2:
+        /*4520*/                   BRA `(.L_x_2);
+        /*4530*/                   NOP;
+        /*4540*/                   NOP;
+        /*4550*/                   NOP;
+        /*4560*/                   NOP;
+        /*4570*/                   NOP;
+        /*4580*/                   NOP;
+        /*4590*/                   NOP;
+        /*45a0*/                   NOP;
+        /*45b0*/                   NOP;
+        /*45c0*/                   NOP;
+        /*45d0*/                   NOP;
+        /*45e0*/                   NOP;
+        /*45f0*/                   NOP;
+.L_x_3:

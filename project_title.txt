@@ -1,0 +1,5 @@
+You’ve created a “Triton-based inline instrumentation framework for sub-kernel GPU timing using %globaltimer and %clock64” — a mouthful, but accurate.
+
+In slightly fancier terms:
+
+“We demonstrate that precise hardware timer instrumentation (%globaltimer, %clock64) can be embedded within Triton kernels via inline PTX, preserving compiler optimizations while enabling per-instruction statistical timing analysis. This bridges high-level semantic kernel descriptions and low-level SASS execution timing.”
