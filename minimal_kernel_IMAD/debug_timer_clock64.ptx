@@ -17,30 +17,31 @@
 .maxntid 32, 1, 1
 {
 	.reg .pred 	%p<71>;
-	.reg .b32 	%r<1008>;
+	.reg .b32 	%r<2009>;
+	.reg .f32 	%f<3>;
 	.reg .b64 	%rd<273>;
-	.loc	1 89 0
+	.loc	1 86 0
 $L__func_begin0:
-	.loc	1 89 0
+	.loc	1 86 0
 
 	ld.param.u64 	%rd76, [debug_timer_clock64_kernel_param_0];
 	ld.param.u64 	%rd77, [debug_timer_clock64_kernel_param_1];
 $L__tmp0:
-	.loc	1 93 24
+	.loc	1 90 24
 	// begin inline asm
 	mov.u32 %r1, %ctaid.x;
 	// end inline asm
-	.loc	1 94 17
-	shl.b32 	%r1004, %r1, 5;
+	.loc	1 91 17
+	shl.b32 	%r2005, %r1, 5;
 	ld.param.u64 	%rd78, [debug_timer_clock64_kernel_param_2];
 	ld.param.u64 	%rd79, [debug_timer_clock64_kernel_param_3];
-	.loc	1 94 38
-	mov.u32 	%r1005, %tid.x;
-	and.b32  	%r1006, %r1005, 31;
-	.loc	1 94 25
-	or.b32  	%r1007, %r1004, %r1006;
-	.loc	1 95 15
-	setp.lt.s32 	%p1, %r1007, 32;
+	.loc	1 91 38
+	mov.u32 	%r2006, %tid.x;
+	and.b32  	%r2007, %r2006, 31;
+	.loc	1 91 25
+	or.b32  	%r2008, %r2005, %r2007;
+	.loc	1 92 15
+	setp.lt.s32 	%p1, %r2008, 32;
 $L__tmp1:
 	.loc	1 31 8
 	// begin inline asm
@@ -52,11 +53,11 @@ $L__tmp2:
 	mov.u64 %rd2, %clock64;
 	// end inline asm
 $L__tmp3:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd80, %rd2, %rd1;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p7, %rd2, %rd1;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd81, %rd80, 9223372036854775807;
 	selp.b64 	%rd82, 9223372036854775807, %rd81, %p7;
 $L__tmp4:
@@ -65,11 +66,11 @@ $L__tmp4:
 	mov.u64 %rd3, %clock64;
 	// end inline asm
 $L__tmp5:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd83, %rd3, %rd2;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p8, %rd3, %rd2;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd84, %rd83, %rd82;
 	selp.b64 	%rd85, %rd82, %rd84, %p8;
 $L__tmp6:
@@ -78,11 +79,11 @@ $L__tmp6:
 	mov.u64 %rd4, %clock64;
 	// end inline asm
 $L__tmp7:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd86, %rd4, %rd3;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p9, %rd4, %rd3;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd87, %rd86, %rd85;
 	selp.b64 	%rd88, %rd85, %rd87, %p9;
 $L__tmp8:
@@ -91,11 +92,11 @@ $L__tmp8:
 	mov.u64 %rd5, %clock64;
 	// end inline asm
 $L__tmp9:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd89, %rd5, %rd4;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p10, %rd5, %rd4;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd90, %rd89, %rd88;
 	selp.b64 	%rd91, %rd88, %rd90, %p10;
 $L__tmp10:
@@ -104,11 +105,11 @@ $L__tmp10:
 	mov.u64 %rd6, %clock64;
 	// end inline asm
 $L__tmp11:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd92, %rd6, %rd5;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p11, %rd6, %rd5;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd93, %rd92, %rd91;
 	selp.b64 	%rd94, %rd91, %rd93, %p11;
 $L__tmp12:
@@ -117,11 +118,11 @@ $L__tmp12:
 	mov.u64 %rd7, %clock64;
 	// end inline asm
 $L__tmp13:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd95, %rd7, %rd6;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p12, %rd7, %rd6;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd96, %rd95, %rd94;
 	selp.b64 	%rd97, %rd94, %rd96, %p12;
 $L__tmp14:
@@ -130,11 +131,11 @@ $L__tmp14:
 	mov.u64 %rd8, %clock64;
 	// end inline asm
 $L__tmp15:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd98, %rd8, %rd7;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p13, %rd8, %rd7;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd99, %rd98, %rd97;
 	selp.b64 	%rd100, %rd97, %rd99, %p13;
 $L__tmp16:
@@ -143,11 +144,11 @@ $L__tmp16:
 	mov.u64 %rd9, %clock64;
 	// end inline asm
 $L__tmp17:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd101, %rd9, %rd8;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p14, %rd9, %rd8;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd102, %rd101, %rd100;
 	selp.b64 	%rd103, %rd100, %rd102, %p14;
 $L__tmp18:
@@ -156,11 +157,11 @@ $L__tmp18:
 	mov.u64 %rd10, %clock64;
 	// end inline asm
 $L__tmp19:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd104, %rd10, %rd9;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p15, %rd10, %rd9;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd105, %rd104, %rd103;
 	selp.b64 	%rd106, %rd103, %rd105, %p15;
 $L__tmp20:
@@ -169,11 +170,11 @@ $L__tmp20:
 	mov.u64 %rd11, %clock64;
 	// end inline asm
 $L__tmp21:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd107, %rd11, %rd10;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p16, %rd11, %rd10;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd108, %rd107, %rd106;
 	selp.b64 	%rd109, %rd106, %rd108, %p16;
 $L__tmp22:
@@ -182,11 +183,11 @@ $L__tmp22:
 	mov.u64 %rd12, %clock64;
 	// end inline asm
 $L__tmp23:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd110, %rd12, %rd11;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p17, %rd12, %rd11;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd111, %rd110, %rd109;
 	selp.b64 	%rd112, %rd109, %rd111, %p17;
 $L__tmp24:
@@ -195,11 +196,11 @@ $L__tmp24:
 	mov.u64 %rd13, %clock64;
 	// end inline asm
 $L__tmp25:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd113, %rd13, %rd12;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p18, %rd13, %rd12;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd114, %rd113, %rd112;
 	selp.b64 	%rd115, %rd112, %rd114, %p18;
 $L__tmp26:
@@ -208,11 +209,11 @@ $L__tmp26:
 	mov.u64 %rd14, %clock64;
 	// end inline asm
 $L__tmp27:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd116, %rd14, %rd13;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p19, %rd14, %rd13;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd117, %rd116, %rd115;
 	selp.b64 	%rd118, %rd115, %rd117, %p19;
 $L__tmp28:
@@ -221,11 +222,11 @@ $L__tmp28:
 	mov.u64 %rd15, %clock64;
 	// end inline asm
 $L__tmp29:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd119, %rd15, %rd14;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p20, %rd15, %rd14;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd120, %rd119, %rd118;
 	selp.b64 	%rd121, %rd118, %rd120, %p20;
 $L__tmp30:
@@ -234,11 +235,11 @@ $L__tmp30:
 	mov.u64 %rd16, %clock64;
 	// end inline asm
 $L__tmp31:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd122, %rd16, %rd15;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p21, %rd16, %rd15;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd123, %rd122, %rd121;
 	selp.b64 	%rd124, %rd121, %rd123, %p21;
 $L__tmp32:
@@ -247,11 +248,11 @@ $L__tmp32:
 	mov.u64 %rd17, %clock64;
 	// end inline asm
 $L__tmp33:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd125, %rd17, %rd16;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p22, %rd17, %rd16;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd126, %rd125, %rd124;
 	selp.b64 	%rd127, %rd124, %rd126, %p22;
 $L__tmp34:
@@ -260,11 +261,11 @@ $L__tmp34:
 	mov.u64 %rd18, %clock64;
 	// end inline asm
 $L__tmp35:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd128, %rd18, %rd17;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p23, %rd18, %rd17;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd129, %rd128, %rd127;
 	selp.b64 	%rd130, %rd127, %rd129, %p23;
 $L__tmp36:
@@ -273,11 +274,11 @@ $L__tmp36:
 	mov.u64 %rd19, %clock64;
 	// end inline asm
 $L__tmp37:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd131, %rd19, %rd18;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p24, %rd19, %rd18;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd132, %rd131, %rd130;
 	selp.b64 	%rd133, %rd130, %rd132, %p24;
 $L__tmp38:
@@ -286,11 +287,11 @@ $L__tmp38:
 	mov.u64 %rd20, %clock64;
 	// end inline asm
 $L__tmp39:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd134, %rd20, %rd19;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p25, %rd20, %rd19;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd135, %rd134, %rd133;
 	selp.b64 	%rd136, %rd133, %rd135, %p25;
 $L__tmp40:
@@ -299,11 +300,11 @@ $L__tmp40:
 	mov.u64 %rd21, %clock64;
 	// end inline asm
 $L__tmp41:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd137, %rd21, %rd20;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p26, %rd21, %rd20;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd138, %rd137, %rd136;
 	selp.b64 	%rd139, %rd136, %rd138, %p26;
 $L__tmp42:
@@ -312,11 +313,11 @@ $L__tmp42:
 	mov.u64 %rd22, %clock64;
 	// end inline asm
 $L__tmp43:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd140, %rd22, %rd21;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p27, %rd22, %rd21;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd141, %rd140, %rd139;
 	selp.b64 	%rd142, %rd139, %rd141, %p27;
 $L__tmp44:
@@ -325,11 +326,11 @@ $L__tmp44:
 	mov.u64 %rd23, %clock64;
 	// end inline asm
 $L__tmp45:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd143, %rd23, %rd22;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p28, %rd23, %rd22;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd144, %rd143, %rd142;
 	selp.b64 	%rd145, %rd142, %rd144, %p28;
 $L__tmp46:
@@ -338,11 +339,11 @@ $L__tmp46:
 	mov.u64 %rd24, %clock64;
 	// end inline asm
 $L__tmp47:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd146, %rd24, %rd23;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p29, %rd24, %rd23;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd147, %rd146, %rd145;
 	selp.b64 	%rd148, %rd145, %rd147, %p29;
 $L__tmp48:
@@ -351,11 +352,11 @@ $L__tmp48:
 	mov.u64 %rd25, %clock64;
 	// end inline asm
 $L__tmp49:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd149, %rd25, %rd24;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p30, %rd25, %rd24;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd150, %rd149, %rd148;
 	selp.b64 	%rd151, %rd148, %rd150, %p30;
 $L__tmp50:
@@ -364,11 +365,11 @@ $L__tmp50:
 	mov.u64 %rd26, %clock64;
 	// end inline asm
 $L__tmp51:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd152, %rd26, %rd25;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p31, %rd26, %rd25;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd153, %rd152, %rd151;
 	selp.b64 	%rd154, %rd151, %rd153, %p31;
 $L__tmp52:
@@ -377,11 +378,11 @@ $L__tmp52:
 	mov.u64 %rd27, %clock64;
 	// end inline asm
 $L__tmp53:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd155, %rd27, %rd26;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p32, %rd27, %rd26;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd156, %rd155, %rd154;
 	selp.b64 	%rd157, %rd154, %rd156, %p32;
 $L__tmp54:
@@ -390,11 +391,11 @@ $L__tmp54:
 	mov.u64 %rd28, %clock64;
 	// end inline asm
 $L__tmp55:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd158, %rd28, %rd27;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p33, %rd28, %rd27;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd159, %rd158, %rd157;
 	selp.b64 	%rd160, %rd157, %rd159, %p33;
 $L__tmp56:
@@ -403,11 +404,11 @@ $L__tmp56:
 	mov.u64 %rd29, %clock64;
 	// end inline asm
 $L__tmp57:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd161, %rd29, %rd28;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p34, %rd29, %rd28;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd162, %rd161, %rd160;
 	selp.b64 	%rd163, %rd160, %rd162, %p34;
 $L__tmp58:
@@ -416,11 +417,11 @@ $L__tmp58:
 	mov.u64 %rd30, %clock64;
 	// end inline asm
 $L__tmp59:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd164, %rd30, %rd29;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p35, %rd30, %rd29;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd165, %rd164, %rd163;
 	selp.b64 	%rd166, %rd163, %rd165, %p35;
 $L__tmp60:
@@ -429,11 +430,11 @@ $L__tmp60:
 	mov.u64 %rd31, %clock64;
 	// end inline asm
 $L__tmp61:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd167, %rd31, %rd30;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p36, %rd31, %rd30;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd168, %rd167, %rd166;
 	selp.b64 	%rd169, %rd166, %rd168, %p36;
 $L__tmp62:
@@ -442,11 +443,11 @@ $L__tmp62:
 	mov.u64 %rd32, %clock64;
 	// end inline asm
 $L__tmp63:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd170, %rd32, %rd31;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p37, %rd32, %rd31;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd171, %rd170, %rd169;
 	selp.b64 	%rd172, %rd169, %rd171, %p37;
 $L__tmp64:
@@ -455,11 +456,11 @@ $L__tmp64:
 	mov.u64 %rd33, %clock64;
 	// end inline asm
 $L__tmp65:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd173, %rd33, %rd32;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p38, %rd33, %rd32;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd174, %rd173, %rd172;
 	selp.b64 	%rd175, %rd172, %rd174, %p38;
 $L__tmp66:
@@ -468,11 +469,11 @@ $L__tmp66:
 	mov.u64 %rd34, %clock64;
 	// end inline asm
 $L__tmp67:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd176, %rd34, %rd33;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p39, %rd34, %rd33;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd177, %rd176, %rd175;
 	selp.b64 	%rd178, %rd175, %rd177, %p39;
 $L__tmp68:
@@ -481,11 +482,11 @@ $L__tmp68:
 	mov.u64 %rd35, %clock64;
 	// end inline asm
 $L__tmp69:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd179, %rd35, %rd34;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p40, %rd35, %rd34;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd180, %rd179, %rd178;
 	selp.b64 	%rd181, %rd178, %rd180, %p40;
 $L__tmp70:
@@ -494,11 +495,11 @@ $L__tmp70:
 	mov.u64 %rd36, %clock64;
 	// end inline asm
 $L__tmp71:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd182, %rd36, %rd35;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p41, %rd36, %rd35;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd183, %rd182, %rd181;
 	selp.b64 	%rd184, %rd181, %rd183, %p41;
 $L__tmp72:
@@ -507,11 +508,11 @@ $L__tmp72:
 	mov.u64 %rd37, %clock64;
 	// end inline asm
 $L__tmp73:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd185, %rd37, %rd36;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p42, %rd37, %rd36;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd186, %rd185, %rd184;
 	selp.b64 	%rd187, %rd184, %rd186, %p42;
 $L__tmp74:
@@ -520,11 +521,11 @@ $L__tmp74:
 	mov.u64 %rd38, %clock64;
 	// end inline asm
 $L__tmp75:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd188, %rd38, %rd37;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p43, %rd38, %rd37;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd189, %rd188, %rd187;
 	selp.b64 	%rd190, %rd187, %rd189, %p43;
 $L__tmp76:
@@ -533,11 +534,11 @@ $L__tmp76:
 	mov.u64 %rd39, %clock64;
 	// end inline asm
 $L__tmp77:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd191, %rd39, %rd38;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p44, %rd39, %rd38;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd192, %rd191, %rd190;
 	selp.b64 	%rd193, %rd190, %rd192, %p44;
 $L__tmp78:
@@ -546,11 +547,11 @@ $L__tmp78:
 	mov.u64 %rd40, %clock64;
 	// end inline asm
 $L__tmp79:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd194, %rd40, %rd39;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p45, %rd40, %rd39;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd195, %rd194, %rd193;
 	selp.b64 	%rd196, %rd193, %rd195, %p45;
 $L__tmp80:
@@ -559,11 +560,11 @@ $L__tmp80:
 	mov.u64 %rd41, %clock64;
 	// end inline asm
 $L__tmp81:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd197, %rd41, %rd40;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p46, %rd41, %rd40;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd198, %rd197, %rd196;
 	selp.b64 	%rd199, %rd196, %rd198, %p46;
 $L__tmp82:
@@ -572,11 +573,11 @@ $L__tmp82:
 	mov.u64 %rd42, %clock64;
 	// end inline asm
 $L__tmp83:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd200, %rd42, %rd41;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p47, %rd42, %rd41;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd201, %rd200, %rd199;
 	selp.b64 	%rd202, %rd199, %rd201, %p47;
 $L__tmp84:
@@ -585,11 +586,11 @@ $L__tmp84:
 	mov.u64 %rd43, %clock64;
 	// end inline asm
 $L__tmp85:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd203, %rd43, %rd42;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p48, %rd43, %rd42;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd204, %rd203, %rd202;
 	selp.b64 	%rd205, %rd202, %rd204, %p48;
 $L__tmp86:
@@ -598,11 +599,11 @@ $L__tmp86:
 	mov.u64 %rd44, %clock64;
 	// end inline asm
 $L__tmp87:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd206, %rd44, %rd43;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p49, %rd44, %rd43;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd207, %rd206, %rd205;
 	selp.b64 	%rd208, %rd205, %rd207, %p49;
 $L__tmp88:
@@ -611,11 +612,11 @@ $L__tmp88:
 	mov.u64 %rd45, %clock64;
 	// end inline asm
 $L__tmp89:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd209, %rd45, %rd44;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p50, %rd45, %rd44;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd210, %rd209, %rd208;
 	selp.b64 	%rd211, %rd208, %rd210, %p50;
 $L__tmp90:
@@ -624,11 +625,11 @@ $L__tmp90:
 	mov.u64 %rd46, %clock64;
 	// end inline asm
 $L__tmp91:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd212, %rd46, %rd45;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p51, %rd46, %rd45;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd213, %rd212, %rd211;
 	selp.b64 	%rd214, %rd211, %rd213, %p51;
 $L__tmp92:
@@ -637,11 +638,11 @@ $L__tmp92:
 	mov.u64 %rd47, %clock64;
 	// end inline asm
 $L__tmp93:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd215, %rd47, %rd46;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p52, %rd47, %rd46;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd216, %rd215, %rd214;
 	selp.b64 	%rd217, %rd214, %rd216, %p52;
 $L__tmp94:
@@ -650,11 +651,11 @@ $L__tmp94:
 	mov.u64 %rd48, %clock64;
 	// end inline asm
 $L__tmp95:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd218, %rd48, %rd47;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p53, %rd48, %rd47;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd219, %rd218, %rd217;
 	selp.b64 	%rd220, %rd217, %rd219, %p53;
 $L__tmp96:
@@ -663,11 +664,11 @@ $L__tmp96:
 	mov.u64 %rd49, %clock64;
 	// end inline asm
 $L__tmp97:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd221, %rd49, %rd48;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p54, %rd49, %rd48;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd222, %rd221, %rd220;
 	selp.b64 	%rd223, %rd220, %rd222, %p54;
 $L__tmp98:
@@ -676,11 +677,11 @@ $L__tmp98:
 	mov.u64 %rd50, %clock64;
 	// end inline asm
 $L__tmp99:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd224, %rd50, %rd49;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p55, %rd50, %rd49;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd225, %rd224, %rd223;
 	selp.b64 	%rd226, %rd223, %rd225, %p55;
 $L__tmp100:
@@ -689,11 +690,11 @@ $L__tmp100:
 	mov.u64 %rd51, %clock64;
 	// end inline asm
 $L__tmp101:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd227, %rd51, %rd50;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p56, %rd51, %rd50;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd228, %rd227, %rd226;
 	selp.b64 	%rd229, %rd226, %rd228, %p56;
 $L__tmp102:
@@ -702,11 +703,11 @@ $L__tmp102:
 	mov.u64 %rd52, %clock64;
 	// end inline asm
 $L__tmp103:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd230, %rd52, %rd51;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p57, %rd52, %rd51;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd231, %rd230, %rd229;
 	selp.b64 	%rd232, %rd229, %rd231, %p57;
 $L__tmp104:
@@ -715,11 +716,11 @@ $L__tmp104:
 	mov.u64 %rd53, %clock64;
 	// end inline asm
 $L__tmp105:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd233, %rd53, %rd52;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p58, %rd53, %rd52;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd234, %rd233, %rd232;
 	selp.b64 	%rd235, %rd232, %rd234, %p58;
 $L__tmp106:
@@ -728,11 +729,11 @@ $L__tmp106:
 	mov.u64 %rd54, %clock64;
 	// end inline asm
 $L__tmp107:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd236, %rd54, %rd53;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p59, %rd54, %rd53;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd237, %rd236, %rd235;
 	selp.b64 	%rd238, %rd235, %rd237, %p59;
 $L__tmp108:
@@ -741,11 +742,11 @@ $L__tmp108:
 	mov.u64 %rd55, %clock64;
 	// end inline asm
 $L__tmp109:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd239, %rd55, %rd54;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p60, %rd55, %rd54;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd240, %rd239, %rd238;
 	selp.b64 	%rd241, %rd238, %rd240, %p60;
 $L__tmp110:
@@ -754,11 +755,11 @@ $L__tmp110:
 	mov.u64 %rd56, %clock64;
 	// end inline asm
 $L__tmp111:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd242, %rd56, %rd55;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p61, %rd56, %rd55;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd243, %rd242, %rd241;
 	selp.b64 	%rd244, %rd241, %rd243, %p61;
 $L__tmp112:
@@ -767,11 +768,11 @@ $L__tmp112:
 	mov.u64 %rd57, %clock64;
 	// end inline asm
 $L__tmp113:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd245, %rd57, %rd56;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p62, %rd57, %rd56;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd246, %rd245, %rd244;
 	selp.b64 	%rd247, %rd244, %rd246, %p62;
 $L__tmp114:
@@ -780,11 +781,11 @@ $L__tmp114:
 	mov.u64 %rd58, %clock64;
 	// end inline asm
 $L__tmp115:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd248, %rd58, %rd57;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p63, %rd58, %rd57;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd249, %rd248, %rd247;
 	selp.b64 	%rd250, %rd247, %rd249, %p63;
 $L__tmp116:
@@ -793,11 +794,11 @@ $L__tmp116:
 	mov.u64 %rd59, %clock64;
 	// end inline asm
 $L__tmp117:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd251, %rd59, %rd58;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p64, %rd59, %rd58;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd252, %rd251, %rd250;
 	selp.b64 	%rd253, %rd250, %rd252, %p64;
 $L__tmp118:
@@ -806,11 +807,11 @@ $L__tmp118:
 	mov.u64 %rd60, %clock64;
 	// end inline asm
 $L__tmp119:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd254, %rd60, %rd59;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p65, %rd60, %rd59;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd255, %rd254, %rd253;
 	selp.b64 	%rd256, %rd253, %rd255, %p65;
 $L__tmp120:
@@ -819,11 +820,11 @@ $L__tmp120:
 	mov.u64 %rd61, %clock64;
 	// end inline asm
 $L__tmp121:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd257, %rd61, %rd60;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p66, %rd61, %rd60;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd258, %rd257, %rd256;
 	selp.b64 	%rd259, %rd256, %rd258, %p66;
 $L__tmp122:
@@ -832,11 +833,11 @@ $L__tmp122:
 	mov.u64 %rd62, %clock64;
 	// end inline asm
 $L__tmp123:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd260, %rd62, %rd61;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p67, %rd62, %rd61;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd261, %rd260, %rd259;
 	selp.b64 	%rd262, %rd259, %rd261, %p67;
 $L__tmp124:
@@ -845,11 +846,11 @@ $L__tmp124:
 	mov.u64 %rd63, %clock64;
 	// end inline asm
 $L__tmp125:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd263, %rd63, %rd62;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p68, %rd63, %rd62;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd264, %rd263, %rd262;
 	selp.b64 	%rd265, %rd262, %rd264, %p68;
 $L__tmp126:
@@ -858,11 +859,11 @@ $L__tmp126:
 	mov.u64 %rd64, %clock64;
 	// end inline asm
 $L__tmp127:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd266, %rd64, %rd63;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p69, %rd64, %rd63;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd267, %rd266, %rd265;
 	selp.b64 	%rd268, %rd265, %rd267, %p69;
 $L__tmp128:
@@ -871,2034 +872,1541 @@ $L__tmp128:
 	mov.u64 %rd65, %clock64;
 	// end inline asm
 $L__tmp129:
-	.loc	1 102 21
+	.loc	1 99 21
 	sub.s64 	%rd269, %rd65, %rd64;
-	.loc	1 104 17
+	.loc	1 101 17
 	setp.eq.s64 	%p70, %rd65, %rd64;
-	.loc	1 105 48
+	.loc	1 102 48
 	min.u64 	%rd270, %rd269, %rd268;
 	selp.b64 	%rd66, %rd268, %rd270, %p70;
-	.loc	1 106 28
-	mul.wide.s32 	%rd271, %r1007, 8;
+	.loc	1 103 28
+	mul.wide.s32 	%rd271, %r2008, 8;
 	add.s64 	%rd67, %rd79, %rd271;
-	.loc	1 106 34
+	.loc	1 103 34
 	// begin inline asm
 	@%p1 st.global.b64 [ %rd67 + 0 ], { %rd66 };
 	// end inline asm
-	.loc	1 110 24
-	mul.wide.s32 	%rd272, %r1007, 4;
+	.loc	1 106 24
+	mul.wide.s32 	%rd272, %r2008, 4;
 	add.s64 	%rd68, %rd76, %rd272;
-	.loc	1 110 16
+	mov.b32 	%r3, 0;
+	.loc	1 106 16
 	// begin inline asm
-	mov.u32 %r4, 0x0;
-	@%p1 ld.global.b32 { %r4 }, [ %rd68 + 0 ];
-	@!%p1 mov.u32 %r4, 0x0;
+	mov.u32 %r2, 0x0;
+	@%p1 ld.global.b32 { %r2 }, [ %rd68 + 0 ];
+	@!%p1 mov.u32 %r2, %r3;
 	// end inline asm
+	mov.b32 	%f1, %r2;
+	.loc	1 106 50
+	cvt.rzi.s32.f32 	%r5, %f1;
 $L__tmp130:
 	.loc	1 31 8
 	// begin inline asm
 	mov.u64 %rd72, %clock64;
 	// end inline asm
+	mov.b32 	%r6, 17;
+	mov.b32 	%r7, 5;
 $L__tmp131:
-	.loc	1 120 12
+	.loc	1 113 12
 	// begin inline asm
-	add.cc.u32 %r6, %r4, 7;
+	{ mad.lo.s32 %r9, %r5, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r8, %r6, 0;
+	{ mad.lo.s32 %r13, %r9, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r10, %r8, 7;
+	{ mad.lo.s32 %r17, %r13, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r12, %r10, 0;
+	{ mad.lo.s32 %r21, %r17, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r14, %r12, 7;
+	{ mad.lo.s32 %r25, %r21, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r16, %r14, 0;
+	{ mad.lo.s32 %r29, %r25, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r18, %r16, 7;
+	{ mad.lo.s32 %r33, %r29, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r20, %r18, 0;
+	{ mad.lo.s32 %r37, %r33, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r22, %r20, 7;
+	{ mad.lo.s32 %r41, %r37, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r24, %r22, 0;
+	{ mad.lo.s32 %r45, %r41, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r26, %r24, 7;
+	{ mad.lo.s32 %r49, %r45, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r28, %r26, 0;
+	{ mad.lo.s32 %r53, %r49, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r30, %r28, 7;
+	{ mad.lo.s32 %r57, %r53, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r32, %r30, 0;
+	{ mad.lo.s32 %r61, %r57, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r34, %r32, 7;
+	{ mad.lo.s32 %r65, %r61, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r36, %r34, 0;
+	{ mad.lo.s32 %r69, %r65, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r38, %r36, 7;
+	{ mad.lo.s32 %r73, %r69, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r40, %r38, 0;
+	{ mad.lo.s32 %r77, %r73, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r42, %r40, 7;
+	{ mad.lo.s32 %r81, %r77, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r44, %r42, 0;
+	{ mad.lo.s32 %r85, %r81, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r46, %r44, 7;
+	{ mad.lo.s32 %r89, %r85, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r48, %r46, 0;
+	{ mad.lo.s32 %r93, %r89, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r50, %r48, 7;
+	{ mad.lo.s32 %r97, %r93, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r52, %r50, 0;
+	{ mad.lo.s32 %r101, %r97, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r54, %r52, 7;
+	{ mad.lo.s32 %r105, %r101, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r56, %r54, 0;
+	{ mad.lo.s32 %r109, %r105, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r58, %r56, 7;
+	{ mad.lo.s32 %r113, %r109, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r60, %r58, 0;
+	{ mad.lo.s32 %r117, %r113, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r62, %r60, 7;
+	{ mad.lo.s32 %r121, %r117, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r64, %r62, 0;
+	{ mad.lo.s32 %r125, %r121, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r66, %r64, 7;
+	{ mad.lo.s32 %r129, %r125, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r68, %r66, 0;
+	{ mad.lo.s32 %r133, %r129, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r70, %r68, 7;
+	{ mad.lo.s32 %r137, %r133, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r72, %r70, 0;
+	{ mad.lo.s32 %r141, %r137, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r74, %r72, 7;
+	{ mad.lo.s32 %r145, %r141, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r76, %r74, 0;
+	{ mad.lo.s32 %r149, %r145, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r78, %r76, 7;
+	{ mad.lo.s32 %r153, %r149, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r80, %r78, 0;
+	{ mad.lo.s32 %r157, %r153, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r82, %r80, 7;
+	{ mad.lo.s32 %r161, %r157, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r84, %r82, 0;
+	{ mad.lo.s32 %r165, %r161, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r86, %r84, 7;
+	{ mad.lo.s32 %r169, %r165, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r88, %r86, 0;
+	{ mad.lo.s32 %r173, %r169, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r90, %r88, 7;
+	{ mad.lo.s32 %r177, %r173, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r92, %r90, 0;
+	{ mad.lo.s32 %r181, %r177, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r94, %r92, 7;
+	{ mad.lo.s32 %r185, %r181, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r96, %r94, 0;
+	{ mad.lo.s32 %r189, %r185, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r98, %r96, 7;
+	{ mad.lo.s32 %r193, %r189, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r100, %r98, 0;
+	{ mad.lo.s32 %r197, %r193, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r102, %r100, 7;
+	{ mad.lo.s32 %r201, %r197, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r104, %r102, 0;
+	{ mad.lo.s32 %r205, %r201, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r106, %r104, 7;
+	{ mad.lo.s32 %r209, %r205, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r108, %r106, 0;
+	{ mad.lo.s32 %r213, %r209, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r110, %r108, 7;
+	{ mad.lo.s32 %r217, %r213, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r112, %r110, 0;
+	{ mad.lo.s32 %r221, %r217, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r114, %r112, 7;
+	{ mad.lo.s32 %r225, %r221, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r116, %r114, 0;
+	{ mad.lo.s32 %r229, %r225, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r118, %r116, 7;
+	{ mad.lo.s32 %r233, %r229, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r120, %r118, 0;
+	{ mad.lo.s32 %r237, %r233, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r122, %r120, 7;
+	{ mad.lo.s32 %r241, %r237, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r124, %r122, 0;
+	{ mad.lo.s32 %r245, %r241, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r126, %r124, 7;
+	{ mad.lo.s32 %r249, %r245, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r128, %r126, 0;
+	{ mad.lo.s32 %r253, %r249, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r130, %r128, 7;
+	{ mad.lo.s32 %r257, %r253, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r132, %r130, 0;
+	{ mad.lo.s32 %r261, %r257, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r134, %r132, 7;
+	{ mad.lo.s32 %r265, %r261, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r136, %r134, 0;
+	{ mad.lo.s32 %r269, %r265, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r138, %r136, 7;
+	{ mad.lo.s32 %r273, %r269, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r140, %r138, 0;
+	{ mad.lo.s32 %r277, %r273, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r142, %r140, 7;
+	{ mad.lo.s32 %r281, %r277, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r144, %r142, 0;
+	{ mad.lo.s32 %r285, %r281, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r146, %r144, 7;
+	{ mad.lo.s32 %r289, %r285, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r148, %r146, 0;
+	{ mad.lo.s32 %r293, %r289, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r150, %r148, 7;
+	{ mad.lo.s32 %r297, %r293, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r152, %r150, 0;
+	{ mad.lo.s32 %r301, %r297, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r154, %r152, 7;
+	{ mad.lo.s32 %r305, %r301, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r156, %r154, 0;
+	{ mad.lo.s32 %r309, %r305, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r158, %r156, 7;
+	{ mad.lo.s32 %r313, %r309, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r160, %r158, 0;
+	{ mad.lo.s32 %r317, %r313, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r162, %r160, 7;
+	{ mad.lo.s32 %r321, %r317, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r164, %r162, 0;
+	{ mad.lo.s32 %r325, %r321, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r166, %r164, 7;
+	{ mad.lo.s32 %r329, %r325, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r168, %r166, 0;
+	{ mad.lo.s32 %r333, %r329, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r170, %r168, 7;
+	{ mad.lo.s32 %r337, %r333, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r172, %r170, 0;
+	{ mad.lo.s32 %r341, %r337, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r174, %r172, 7;
+	{ mad.lo.s32 %r345, %r341, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r176, %r174, 0;
+	{ mad.lo.s32 %r349, %r345, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r178, %r176, 7;
+	{ mad.lo.s32 %r353, %r349, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r180, %r178, 0;
+	{ mad.lo.s32 %r357, %r353, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r182, %r180, 7;
+	{ mad.lo.s32 %r361, %r357, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r184, %r182, 0;
+	{ mad.lo.s32 %r365, %r361, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r186, %r184, 7;
+	{ mad.lo.s32 %r369, %r365, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r188, %r186, 0;
+	{ mad.lo.s32 %r373, %r369, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r190, %r188, 7;
+	{ mad.lo.s32 %r377, %r373, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r192, %r190, 0;
+	{ mad.lo.s32 %r381, %r377, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r194, %r192, 7;
+	{ mad.lo.s32 %r385, %r381, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r196, %r194, 0;
+	{ mad.lo.s32 %r389, %r385, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r198, %r196, 7;
+	{ mad.lo.s32 %r393, %r389, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r200, %r198, 0;
+	{ mad.lo.s32 %r397, %r393, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r202, %r200, 7;
+	{ mad.lo.s32 %r401, %r397, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r204, %r202, 0;
+	{ mad.lo.s32 %r405, %r401, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r206, %r204, 7;
+	{ mad.lo.s32 %r409, %r405, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r208, %r206, 0;
+	{ mad.lo.s32 %r413, %r409, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r210, %r208, 7;
+	{ mad.lo.s32 %r417, %r413, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r212, %r210, 0;
+	{ mad.lo.s32 %r421, %r417, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r214, %r212, 7;
+	{ mad.lo.s32 %r425, %r421, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r216, %r214, 0;
+	{ mad.lo.s32 %r429, %r425, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r218, %r216, 7;
+	{ mad.lo.s32 %r433, %r429, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r220, %r218, 0;
+	{ mad.lo.s32 %r437, %r433, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r222, %r220, 7;
+	{ mad.lo.s32 %r441, %r437, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r224, %r222, 0;
+	{ mad.lo.s32 %r445, %r441, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r226, %r224, 7;
+	{ mad.lo.s32 %r449, %r445, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r228, %r226, 0;
+	{ mad.lo.s32 %r453, %r449, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r230, %r228, 7;
+	{ mad.lo.s32 %r457, %r453, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r232, %r230, 0;
+	{ mad.lo.s32 %r461, %r457, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r234, %r232, 7;
+	{ mad.lo.s32 %r465, %r461, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r236, %r234, 0;
+	{ mad.lo.s32 %r469, %r465, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r238, %r236, 7;
+	{ mad.lo.s32 %r473, %r469, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r240, %r238, 0;
+	{ mad.lo.s32 %r477, %r473, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r242, %r240, 7;
+	{ mad.lo.s32 %r481, %r477, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r244, %r242, 0;
+	{ mad.lo.s32 %r485, %r481, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r246, %r244, 7;
+	{ mad.lo.s32 %r489, %r485, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r248, %r246, 0;
+	{ mad.lo.s32 %r493, %r489, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r250, %r248, 7;
+	{ mad.lo.s32 %r497, %r493, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r252, %r250, 0;
+	{ mad.lo.s32 %r501, %r497, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r254, %r252, 7;
+	{ mad.lo.s32 %r505, %r501, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r256, %r254, 0;
+	{ mad.lo.s32 %r509, %r505, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r258, %r256, 7;
+	{ mad.lo.s32 %r513, %r509, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r260, %r258, 0;
+	{ mad.lo.s32 %r517, %r513, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r262, %r260, 7;
+	{ mad.lo.s32 %r521, %r517, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r264, %r262, 0;
+	{ mad.lo.s32 %r525, %r521, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r266, %r264, 7;
+	{ mad.lo.s32 %r529, %r525, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r268, %r266, 0;
+	{ mad.lo.s32 %r533, %r529, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r270, %r268, 7;
+	{ mad.lo.s32 %r537, %r533, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r272, %r270, 0;
+	{ mad.lo.s32 %r541, %r537, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r274, %r272, 7;
+	{ mad.lo.s32 %r545, %r541, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r276, %r274, 0;
+	{ mad.lo.s32 %r549, %r545, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r278, %r276, 7;
+	{ mad.lo.s32 %r553, %r549, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r280, %r278, 0;
+	{ mad.lo.s32 %r557, %r553, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r282, %r280, 7;
+	{ mad.lo.s32 %r561, %r557, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r284, %r282, 0;
+	{ mad.lo.s32 %r565, %r561, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r286, %r284, 7;
+	{ mad.lo.s32 %r569, %r565, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r288, %r286, 0;
+	{ mad.lo.s32 %r573, %r569, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r290, %r288, 7;
+	{ mad.lo.s32 %r577, %r573, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r292, %r290, 0;
+	{ mad.lo.s32 %r581, %r577, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r294, %r292, 7;
+	{ mad.lo.s32 %r585, %r581, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r296, %r294, 0;
+	{ mad.lo.s32 %r589, %r585, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r298, %r296, 7;
+	{ mad.lo.s32 %r593, %r589, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r300, %r298, 0;
+	{ mad.lo.s32 %r597, %r593, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r302, %r300, 7;
+	{ mad.lo.s32 %r601, %r597, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r304, %r302, 0;
+	{ mad.lo.s32 %r605, %r601, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r306, %r304, 7;
+	{ mad.lo.s32 %r609, %r605, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r308, %r306, 0;
+	{ mad.lo.s32 %r613, %r609, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r310, %r308, 7;
+	{ mad.lo.s32 %r617, %r613, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r312, %r310, 0;
+	{ mad.lo.s32 %r621, %r617, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r314, %r312, 7;
+	{ mad.lo.s32 %r625, %r621, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r316, %r314, 0;
+	{ mad.lo.s32 %r629, %r625, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r318, %r316, 7;
+	{ mad.lo.s32 %r633, %r629, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r320, %r318, 0;
+	{ mad.lo.s32 %r637, %r633, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r322, %r320, 7;
+	{ mad.lo.s32 %r641, %r637, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r324, %r322, 0;
+	{ mad.lo.s32 %r645, %r641, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r326, %r324, 7;
+	{ mad.lo.s32 %r649, %r645, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r328, %r326, 0;
+	{ mad.lo.s32 %r653, %r649, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r330, %r328, 7;
+	{ mad.lo.s32 %r657, %r653, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r332, %r330, 0;
+	{ mad.lo.s32 %r661, %r657, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r334, %r332, 7;
+	{ mad.lo.s32 %r665, %r661, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r336, %r334, 0;
+	{ mad.lo.s32 %r669, %r665, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r338, %r336, 7;
+	{ mad.lo.s32 %r673, %r669, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r340, %r338, 0;
+	{ mad.lo.s32 %r677, %r673, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r342, %r340, 7;
+	{ mad.lo.s32 %r681, %r677, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r344, %r342, 0;
+	{ mad.lo.s32 %r685, %r681, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r346, %r344, 7;
+	{ mad.lo.s32 %r689, %r685, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r348, %r346, 0;
+	{ mad.lo.s32 %r693, %r689, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r350, %r348, 7;
+	{ mad.lo.s32 %r697, %r693, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r352, %r350, 0;
+	{ mad.lo.s32 %r701, %r697, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r354, %r352, 7;
+	{ mad.lo.s32 %r705, %r701, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r356, %r354, 0;
+	{ mad.lo.s32 %r709, %r705, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r358, %r356, 7;
+	{ mad.lo.s32 %r713, %r709, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r360, %r358, 0;
+	{ mad.lo.s32 %r717, %r713, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r362, %r360, 7;
+	{ mad.lo.s32 %r721, %r717, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r364, %r362, 0;
+	{ mad.lo.s32 %r725, %r721, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r366, %r364, 7;
+	{ mad.lo.s32 %r729, %r725, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r368, %r366, 0;
+	{ mad.lo.s32 %r733, %r729, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r370, %r368, 7;
+	{ mad.lo.s32 %r737, %r733, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r372, %r370, 0;
+	{ mad.lo.s32 %r741, %r737, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r374, %r372, 7;
+	{ mad.lo.s32 %r745, %r741, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r376, %r374, 0;
+	{ mad.lo.s32 %r749, %r745, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r378, %r376, 7;
+	{ mad.lo.s32 %r753, %r749, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r380, %r378, 0;
+	{ mad.lo.s32 %r757, %r753, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r382, %r380, 7;
+	{ mad.lo.s32 %r761, %r757, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r384, %r382, 0;
+	{ mad.lo.s32 %r765, %r761, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r386, %r384, 7;
+	{ mad.lo.s32 %r769, %r765, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r388, %r386, 0;
+	{ mad.lo.s32 %r773, %r769, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r390, %r388, 7;
+	{ mad.lo.s32 %r777, %r773, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r392, %r390, 0;
+	{ mad.lo.s32 %r781, %r777, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r394, %r392, 7;
+	{ mad.lo.s32 %r785, %r781, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r396, %r394, 0;
+	{ mad.lo.s32 %r789, %r785, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r398, %r396, 7;
+	{ mad.lo.s32 %r793, %r789, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r400, %r398, 0;
+	{ mad.lo.s32 %r797, %r793, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r402, %r400, 7;
+	{ mad.lo.s32 %r801, %r797, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r404, %r402, 0;
+	{ mad.lo.s32 %r805, %r801, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r406, %r404, 7;
+	{ mad.lo.s32 %r809, %r805, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r408, %r406, 0;
+	{ mad.lo.s32 %r813, %r809, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r410, %r408, 7;
+	{ mad.lo.s32 %r817, %r813, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r412, %r410, 0;
+	{ mad.lo.s32 %r821, %r817, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r414, %r412, 7;
+	{ mad.lo.s32 %r825, %r821, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r416, %r414, 0;
+	{ mad.lo.s32 %r829, %r825, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r418, %r416, 7;
+	{ mad.lo.s32 %r833, %r829, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r420, %r418, 0;
+	{ mad.lo.s32 %r837, %r833, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r422, %r420, 7;
+	{ mad.lo.s32 %r841, %r837, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r424, %r422, 0;
+	{ mad.lo.s32 %r845, %r841, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r426, %r424, 7;
+	{ mad.lo.s32 %r849, %r845, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r428, %r426, 0;
+	{ mad.lo.s32 %r853, %r849, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r430, %r428, 7;
+	{ mad.lo.s32 %r857, %r853, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r432, %r430, 0;
+	{ mad.lo.s32 %r861, %r857, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r434, %r432, 7;
+	{ mad.lo.s32 %r865, %r861, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r436, %r434, 0;
+	{ mad.lo.s32 %r869, %r865, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r438, %r436, 7;
+	{ mad.lo.s32 %r873, %r869, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r440, %r438, 0;
+	{ mad.lo.s32 %r877, %r873, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r442, %r440, 7;
+	{ mad.lo.s32 %r881, %r877, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r444, %r442, 0;
+	{ mad.lo.s32 %r885, %r881, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r446, %r444, 7;
+	{ mad.lo.s32 %r889, %r885, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r448, %r446, 0;
+	{ mad.lo.s32 %r893, %r889, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r450, %r448, 7;
+	{ mad.lo.s32 %r897, %r893, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r452, %r450, 0;
+	{ mad.lo.s32 %r901, %r897, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r454, %r452, 7;
+	{ mad.lo.s32 %r905, %r901, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r456, %r454, 0;
+	{ mad.lo.s32 %r909, %r905, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r458, %r456, 7;
+	{ mad.lo.s32 %r913, %r909, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r460, %r458, 0;
+	{ mad.lo.s32 %r917, %r913, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r462, %r460, 7;
+	{ mad.lo.s32 %r921, %r917, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r464, %r462, 0;
+	{ mad.lo.s32 %r925, %r921, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r466, %r464, 7;
+	{ mad.lo.s32 %r929, %r925, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r468, %r466, 0;
+	{ mad.lo.s32 %r933, %r929, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r470, %r468, 7;
+	{ mad.lo.s32 %r937, %r933, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r472, %r470, 0;
+	{ mad.lo.s32 %r941, %r937, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r474, %r472, 7;
+	{ mad.lo.s32 %r945, %r941, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r476, %r474, 0;
+	{ mad.lo.s32 %r949, %r945, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r478, %r476, 7;
+	{ mad.lo.s32 %r953, %r949, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r480, %r478, 0;
+	{ mad.lo.s32 %r957, %r953, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r482, %r480, 7;
+	{ mad.lo.s32 %r961, %r957, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r484, %r482, 0;
+	{ mad.lo.s32 %r965, %r961, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r486, %r484, 7;
+	{ mad.lo.s32 %r969, %r965, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r488, %r486, 0;
+	{ mad.lo.s32 %r973, %r969, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r490, %r488, 7;
+	{ mad.lo.s32 %r977, %r973, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r492, %r490, 0;
+	{ mad.lo.s32 %r981, %r977, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r494, %r492, 7;
+	{ mad.lo.s32 %r985, %r981, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r496, %r494, 0;
+	{ mad.lo.s32 %r989, %r985, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r498, %r496, 7;
+	{ mad.lo.s32 %r993, %r989, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r500, %r498, 0;
+	{ mad.lo.s32 %r997, %r993, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r502, %r500, 7;
+	{ mad.lo.s32 %r1001, %r997, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r504, %r502, 0;
+	{ mad.lo.s32 %r1005, %r1001, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r506, %r504, 7;
+	{ mad.lo.s32 %r1009, %r1005, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r508, %r506, 0;
+	{ mad.lo.s32 %r1013, %r1009, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r510, %r508, 7;
+	{ mad.lo.s32 %r1017, %r1013, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r512, %r510, 0;
+	{ mad.lo.s32 %r1021, %r1017, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r514, %r512, 7;
+	{ mad.lo.s32 %r1025, %r1021, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r516, %r514, 0;
+	{ mad.lo.s32 %r1029, %r1025, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r518, %r516, 7;
+	{ mad.lo.s32 %r1033, %r1029, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r520, %r518, 0;
+	{ mad.lo.s32 %r1037, %r1033, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r522, %r520, 7;
+	{ mad.lo.s32 %r1041, %r1037, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r524, %r522, 0;
+	{ mad.lo.s32 %r1045, %r1041, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r526, %r524, 7;
+	{ mad.lo.s32 %r1049, %r1045, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r528, %r526, 0;
+	{ mad.lo.s32 %r1053, %r1049, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r530, %r528, 7;
+	{ mad.lo.s32 %r1057, %r1053, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r532, %r530, 0;
+	{ mad.lo.s32 %r1061, %r1057, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r534, %r532, 7;
+	{ mad.lo.s32 %r1065, %r1061, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r536, %r534, 0;
+	{ mad.lo.s32 %r1069, %r1065, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r538, %r536, 7;
+	{ mad.lo.s32 %r1073, %r1069, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r540, %r538, 0;
+	{ mad.lo.s32 %r1077, %r1073, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r542, %r540, 7;
+	{ mad.lo.s32 %r1081, %r1077, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r544, %r542, 0;
+	{ mad.lo.s32 %r1085, %r1081, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r546, %r544, 7;
+	{ mad.lo.s32 %r1089, %r1085, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r548, %r546, 0;
+	{ mad.lo.s32 %r1093, %r1089, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r550, %r548, 7;
+	{ mad.lo.s32 %r1097, %r1093, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r552, %r550, 0;
+	{ mad.lo.s32 %r1101, %r1097, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r554, %r552, 7;
+	{ mad.lo.s32 %r1105, %r1101, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r556, %r554, 0;
+	{ mad.lo.s32 %r1109, %r1105, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r558, %r556, 7;
+	{ mad.lo.s32 %r1113, %r1109, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r560, %r558, 0;
+	{ mad.lo.s32 %r1117, %r1113, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r562, %r560, 7;
+	{ mad.lo.s32 %r1121, %r1117, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r564, %r562, 0;
+	{ mad.lo.s32 %r1125, %r1121, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r566, %r564, 7;
+	{ mad.lo.s32 %r1129, %r1125, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r568, %r566, 0;
+	{ mad.lo.s32 %r1133, %r1129, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r570, %r568, 7;
+	{ mad.lo.s32 %r1137, %r1133, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r572, %r570, 0;
+	{ mad.lo.s32 %r1141, %r1137, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r574, %r572, 7;
+	{ mad.lo.s32 %r1145, %r1141, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r576, %r574, 0;
+	{ mad.lo.s32 %r1149, %r1145, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r578, %r576, 7;
+	{ mad.lo.s32 %r1153, %r1149, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r580, %r578, 0;
+	{ mad.lo.s32 %r1157, %r1153, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r582, %r580, 7;
+	{ mad.lo.s32 %r1161, %r1157, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r584, %r582, 0;
+	{ mad.lo.s32 %r1165, %r1161, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r586, %r584, 7;
+	{ mad.lo.s32 %r1169, %r1165, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r588, %r586, 0;
+	{ mad.lo.s32 %r1173, %r1169, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r590, %r588, 7;
+	{ mad.lo.s32 %r1177, %r1173, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r592, %r590, 0;
+	{ mad.lo.s32 %r1181, %r1177, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r594, %r592, 7;
+	{ mad.lo.s32 %r1185, %r1181, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r596, %r594, 0;
+	{ mad.lo.s32 %r1189, %r1185, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r598, %r596, 7;
+	{ mad.lo.s32 %r1193, %r1189, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r600, %r598, 0;
+	{ mad.lo.s32 %r1197, %r1193, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r602, %r600, 7;
+	{ mad.lo.s32 %r1201, %r1197, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r604, %r602, 0;
+	{ mad.lo.s32 %r1205, %r1201, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r606, %r604, 7;
+	{ mad.lo.s32 %r1209, %r1205, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r608, %r606, 0;
+	{ mad.lo.s32 %r1213, %r1209, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r610, %r608, 7;
+	{ mad.lo.s32 %r1217, %r1213, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r612, %r610, 0;
+	{ mad.lo.s32 %r1221, %r1217, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r614, %r612, 7;
+	{ mad.lo.s32 %r1225, %r1221, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r616, %r614, 0;
+	{ mad.lo.s32 %r1229, %r1225, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r618, %r616, 7;
+	{ mad.lo.s32 %r1233, %r1229, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r620, %r618, 0;
+	{ mad.lo.s32 %r1237, %r1233, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r622, %r620, 7;
+	{ mad.lo.s32 %r1241, %r1237, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r624, %r622, 0;
+	{ mad.lo.s32 %r1245, %r1241, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r626, %r624, 7;
+	{ mad.lo.s32 %r1249, %r1245, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r628, %r626, 0;
+	{ mad.lo.s32 %r1253, %r1249, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r630, %r628, 7;
+	{ mad.lo.s32 %r1257, %r1253, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r632, %r630, 0;
+	{ mad.lo.s32 %r1261, %r1257, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r634, %r632, 7;
+	{ mad.lo.s32 %r1265, %r1261, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r636, %r634, 0;
+	{ mad.lo.s32 %r1269, %r1265, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r638, %r636, 7;
+	{ mad.lo.s32 %r1273, %r1269, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r640, %r638, 0;
+	{ mad.lo.s32 %r1277, %r1273, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r642, %r640, 7;
+	{ mad.lo.s32 %r1281, %r1277, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r644, %r642, 0;
+	{ mad.lo.s32 %r1285, %r1281, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r646, %r644, 7;
+	{ mad.lo.s32 %r1289, %r1285, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r648, %r646, 0;
+	{ mad.lo.s32 %r1293, %r1289, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r650, %r648, 7;
+	{ mad.lo.s32 %r1297, %r1293, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r652, %r650, 0;
+	{ mad.lo.s32 %r1301, %r1297, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r654, %r652, 7;
+	{ mad.lo.s32 %r1305, %r1301, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r656, %r654, 0;
+	{ mad.lo.s32 %r1309, %r1305, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r658, %r656, 7;
+	{ mad.lo.s32 %r1313, %r1309, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r660, %r658, 0;
+	{ mad.lo.s32 %r1317, %r1313, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r662, %r660, 7;
+	{ mad.lo.s32 %r1321, %r1317, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r664, %r662, 0;
+	{ mad.lo.s32 %r1325, %r1321, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r666, %r664, 7;
+	{ mad.lo.s32 %r1329, %r1325, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r668, %r666, 0;
+	{ mad.lo.s32 %r1333, %r1329, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r670, %r668, 7;
+	{ mad.lo.s32 %r1337, %r1333, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r672, %r670, 0;
+	{ mad.lo.s32 %r1341, %r1337, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r674, %r672, 7;
+	{ mad.lo.s32 %r1345, %r1341, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r676, %r674, 0;
+	{ mad.lo.s32 %r1349, %r1345, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r678, %r676, 7;
+	{ mad.lo.s32 %r1353, %r1349, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r680, %r678, 0;
+	{ mad.lo.s32 %r1357, %r1353, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r682, %r680, 7;
+	{ mad.lo.s32 %r1361, %r1357, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r684, %r682, 0;
+	{ mad.lo.s32 %r1365, %r1361, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r686, %r684, 7;
+	{ mad.lo.s32 %r1369, %r1365, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r688, %r686, 0;
+	{ mad.lo.s32 %r1373, %r1369, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r690, %r688, 7;
+	{ mad.lo.s32 %r1377, %r1373, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r692, %r690, 0;
+	{ mad.lo.s32 %r1381, %r1377, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r694, %r692, 7;
+	{ mad.lo.s32 %r1385, %r1381, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r696, %r694, 0;
+	{ mad.lo.s32 %r1389, %r1385, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r698, %r696, 7;
+	{ mad.lo.s32 %r1393, %r1389, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r700, %r698, 0;
+	{ mad.lo.s32 %r1397, %r1393, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r702, %r700, 7;
+	{ mad.lo.s32 %r1401, %r1397, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r704, %r702, 0;
+	{ mad.lo.s32 %r1405, %r1401, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r706, %r704, 7;
+	{ mad.lo.s32 %r1409, %r1405, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r708, %r706, 0;
+	{ mad.lo.s32 %r1413, %r1409, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r710, %r708, 7;
+	{ mad.lo.s32 %r1417, %r1413, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r712, %r710, 0;
+	{ mad.lo.s32 %r1421, %r1417, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r714, %r712, 7;
+	{ mad.lo.s32 %r1425, %r1421, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r716, %r714, 0;
+	{ mad.lo.s32 %r1429, %r1425, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r718, %r716, 7;
+	{ mad.lo.s32 %r1433, %r1429, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r720, %r718, 0;
+	{ mad.lo.s32 %r1437, %r1433, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r722, %r720, 7;
+	{ mad.lo.s32 %r1441, %r1437, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r724, %r722, 0;
+	{ mad.lo.s32 %r1445, %r1441, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r726, %r724, 7;
+	{ mad.lo.s32 %r1449, %r1445, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r728, %r726, 0;
+	{ mad.lo.s32 %r1453, %r1449, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r730, %r728, 7;
+	{ mad.lo.s32 %r1457, %r1453, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r732, %r730, 0;
+	{ mad.lo.s32 %r1461, %r1457, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r734, %r732, 7;
+	{ mad.lo.s32 %r1465, %r1461, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r736, %r734, 0;
+	{ mad.lo.s32 %r1469, %r1465, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r738, %r736, 7;
+	{ mad.lo.s32 %r1473, %r1469, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r740, %r738, 0;
+	{ mad.lo.s32 %r1477, %r1473, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r742, %r740, 7;
+	{ mad.lo.s32 %r1481, %r1477, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r744, %r742, 0;
+	{ mad.lo.s32 %r1485, %r1481, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r746, %r744, 7;
+	{ mad.lo.s32 %r1489, %r1485, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r748, %r746, 0;
+	{ mad.lo.s32 %r1493, %r1489, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r750, %r748, 7;
+	{ mad.lo.s32 %r1497, %r1493, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r752, %r750, 0;
+	{ mad.lo.s32 %r1501, %r1497, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r754, %r752, 7;
+	{ mad.lo.s32 %r1505, %r1501, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r756, %r754, 0;
+	{ mad.lo.s32 %r1509, %r1505, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r758, %r756, 7;
+	{ mad.lo.s32 %r1513, %r1509, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r760, %r758, 0;
+	{ mad.lo.s32 %r1517, %r1513, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r762, %r760, 7;
+	{ mad.lo.s32 %r1521, %r1517, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r764, %r762, 0;
+	{ mad.lo.s32 %r1525, %r1521, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r766, %r764, 7;
+	{ mad.lo.s32 %r1529, %r1525, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r768, %r766, 0;
+	{ mad.lo.s32 %r1533, %r1529, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r770, %r768, 7;
+	{ mad.lo.s32 %r1537, %r1533, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r772, %r770, 0;
+	{ mad.lo.s32 %r1541, %r1537, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r774, %r772, 7;
+	{ mad.lo.s32 %r1545, %r1541, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r776, %r774, 0;
+	{ mad.lo.s32 %r1549, %r1545, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r778, %r776, 7;
+	{ mad.lo.s32 %r1553, %r1549, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r780, %r778, 0;
+	{ mad.lo.s32 %r1557, %r1553, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r782, %r780, 7;
+	{ mad.lo.s32 %r1561, %r1557, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r784, %r782, 0;
+	{ mad.lo.s32 %r1565, %r1561, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r786, %r784, 7;
+	{ mad.lo.s32 %r1569, %r1565, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r788, %r786, 0;
+	{ mad.lo.s32 %r1573, %r1569, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r790, %r788, 7;
+	{ mad.lo.s32 %r1577, %r1573, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r792, %r790, 0;
+	{ mad.lo.s32 %r1581, %r1577, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r794, %r792, 7;
+	{ mad.lo.s32 %r1585, %r1581, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r796, %r794, 0;
+	{ mad.lo.s32 %r1589, %r1585, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r798, %r796, 7;
+	{ mad.lo.s32 %r1593, %r1589, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r800, %r798, 0;
+	{ mad.lo.s32 %r1597, %r1593, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r802, %r800, 7;
+	{ mad.lo.s32 %r1601, %r1597, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r804, %r802, 0;
+	{ mad.lo.s32 %r1605, %r1601, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r806, %r804, 7;
+	{ mad.lo.s32 %r1609, %r1605, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r808, %r806, 0;
+	{ mad.lo.s32 %r1613, %r1609, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r810, %r808, 7;
+	{ mad.lo.s32 %r1617, %r1613, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r812, %r810, 0;
+	{ mad.lo.s32 %r1621, %r1617, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r814, %r812, 7;
+	{ mad.lo.s32 %r1625, %r1621, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r816, %r814, 0;
+	{ mad.lo.s32 %r1629, %r1625, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r818, %r816, 7;
+	{ mad.lo.s32 %r1633, %r1629, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r820, %r818, 0;
+	{ mad.lo.s32 %r1637, %r1633, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r822, %r820, 7;
+	{ mad.lo.s32 %r1641, %r1637, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r824, %r822, 0;
+	{ mad.lo.s32 %r1645, %r1641, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r826, %r824, 7;
+	{ mad.lo.s32 %r1649, %r1645, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r828, %r826, 0;
+	{ mad.lo.s32 %r1653, %r1649, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r830, %r828, 7;
+	{ mad.lo.s32 %r1657, %r1653, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r832, %r830, 0;
+	{ mad.lo.s32 %r1661, %r1657, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r834, %r832, 7;
+	{ mad.lo.s32 %r1665, %r1661, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r836, %r834, 0;
+	{ mad.lo.s32 %r1669, %r1665, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r838, %r836, 7;
+	{ mad.lo.s32 %r1673, %r1669, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r840, %r838, 0;
+	{ mad.lo.s32 %r1677, %r1673, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r842, %r840, 7;
+	{ mad.lo.s32 %r1681, %r1677, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r844, %r842, 0;
+	{ mad.lo.s32 %r1685, %r1681, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r846, %r844, 7;
+	{ mad.lo.s32 %r1689, %r1685, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r848, %r846, 0;
+	{ mad.lo.s32 %r1693, %r1689, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r850, %r848, 7;
+	{ mad.lo.s32 %r1697, %r1693, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r852, %r850, 0;
+	{ mad.lo.s32 %r1701, %r1697, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r854, %r852, 7;
+	{ mad.lo.s32 %r1705, %r1701, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r856, %r854, 0;
+	{ mad.lo.s32 %r1709, %r1705, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r858, %r856, 7;
+	{ mad.lo.s32 %r1713, %r1709, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r860, %r858, 0;
+	{ mad.lo.s32 %r1717, %r1713, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r862, %r860, 7;
+	{ mad.lo.s32 %r1721, %r1717, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r864, %r862, 0;
+	{ mad.lo.s32 %r1725, %r1721, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r866, %r864, 7;
+	{ mad.lo.s32 %r1729, %r1725, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r868, %r866, 0;
+	{ mad.lo.s32 %r1733, %r1729, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r870, %r868, 7;
+	{ mad.lo.s32 %r1737, %r1733, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r872, %r870, 0;
+	{ mad.lo.s32 %r1741, %r1737, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r874, %r872, 7;
+	{ mad.lo.s32 %r1745, %r1741, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r876, %r874, 0;
+	{ mad.lo.s32 %r1749, %r1745, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r878, %r876, 7;
+	{ mad.lo.s32 %r1753, %r1749, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r880, %r878, 0;
+	{ mad.lo.s32 %r1757, %r1753, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r882, %r880, 7;
+	{ mad.lo.s32 %r1761, %r1757, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r884, %r882, 0;
+	{ mad.lo.s32 %r1765, %r1761, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r886, %r884, 7;
+	{ mad.lo.s32 %r1769, %r1765, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r888, %r886, 0;
+	{ mad.lo.s32 %r1773, %r1769, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r890, %r888, 7;
+	{ mad.lo.s32 %r1777, %r1773, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r892, %r890, 0;
+	{ mad.lo.s32 %r1781, %r1777, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r894, %r892, 7;
+	{ mad.lo.s32 %r1785, %r1781, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r896, %r894, 0;
+	{ mad.lo.s32 %r1789, %r1785, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r898, %r896, 7;
+	{ mad.lo.s32 %r1793, %r1789, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r900, %r898, 0;
+	{ mad.lo.s32 %r1797, %r1793, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r902, %r900, 7;
+	{ mad.lo.s32 %r1801, %r1797, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r904, %r902, 0;
+	{ mad.lo.s32 %r1805, %r1801, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r906, %r904, 7;
+	{ mad.lo.s32 %r1809, %r1805, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r908, %r906, 0;
+	{ mad.lo.s32 %r1813, %r1809, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r910, %r908, 7;
+	{ mad.lo.s32 %r1817, %r1813, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r912, %r910, 0;
+	{ mad.lo.s32 %r1821, %r1817, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r914, %r912, 7;
+	{ mad.lo.s32 %r1825, %r1821, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r916, %r914, 0;
+	{ mad.lo.s32 %r1829, %r1825, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r918, %r916, 7;
+	{ mad.lo.s32 %r1833, %r1829, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r920, %r918, 0;
+	{ mad.lo.s32 %r1837, %r1833, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r922, %r920, 7;
+	{ mad.lo.s32 %r1841, %r1837, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r924, %r922, 0;
+	{ mad.lo.s32 %r1845, %r1841, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r926, %r924, 7;
+	{ mad.lo.s32 %r1849, %r1845, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r928, %r926, 0;
+	{ mad.lo.s32 %r1853, %r1849, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r930, %r928, 7;
+	{ mad.lo.s32 %r1857, %r1853, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r932, %r930, 0;
+	{ mad.lo.s32 %r1861, %r1857, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r934, %r932, 7;
+	{ mad.lo.s32 %r1865, %r1861, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r936, %r934, 0;
+	{ mad.lo.s32 %r1869, %r1865, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r938, %r936, 7;
+	{ mad.lo.s32 %r1873, %r1869, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r940, %r938, 0;
+	{ mad.lo.s32 %r1877, %r1873, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r942, %r940, 7;
+	{ mad.lo.s32 %r1881, %r1877, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r944, %r942, 0;
+	{ mad.lo.s32 %r1885, %r1881, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r946, %r944, 7;
+	{ mad.lo.s32 %r1889, %r1885, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r948, %r946, 0;
+	{ mad.lo.s32 %r1893, %r1889, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r950, %r948, 7;
+	{ mad.lo.s32 %r1897, %r1893, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r952, %r950, 0;
+	{ mad.lo.s32 %r1901, %r1897, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r954, %r952, 7;
+	{ mad.lo.s32 %r1905, %r1901, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r956, %r954, 0;
+	{ mad.lo.s32 %r1909, %r1905, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r958, %r956, 7;
+	{ mad.lo.s32 %r1913, %r1909, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r960, %r958, 0;
+	{ mad.lo.s32 %r1917, %r1913, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r962, %r960, 7;
+	{ mad.lo.s32 %r1921, %r1917, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r964, %r962, 0;
+	{ mad.lo.s32 %r1925, %r1921, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r966, %r964, 7;
+	{ mad.lo.s32 %r1929, %r1925, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r968, %r966, 0;
+	{ mad.lo.s32 %r1933, %r1929, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r970, %r968, 7;
+	{ mad.lo.s32 %r1937, %r1933, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r972, %r970, 0;
+	{ mad.lo.s32 %r1941, %r1937, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r974, %r972, 7;
+	{ mad.lo.s32 %r1945, %r1941, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r976, %r974, 0;
+	{ mad.lo.s32 %r1949, %r1945, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r978, %r976, 7;
+	{ mad.lo.s32 %r1953, %r1949, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r980, %r978, 0;
+	{ mad.lo.s32 %r1957, %r1953, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r982, %r980, 7;
+	{ mad.lo.s32 %r1961, %r1957, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r984, %r982, 0;
+	{ mad.lo.s32 %r1965, %r1961, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r986, %r984, 7;
+	{ mad.lo.s32 %r1969, %r1965, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r988, %r986, 0;
+	{ mad.lo.s32 %r1973, %r1969, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r990, %r988, 7;
+	{ mad.lo.s32 %r1977, %r1973, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r992, %r990, 0;
+	{ mad.lo.s32 %r1981, %r1977, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r994, %r992, 7;
+	{ mad.lo.s32 %r1985, %r1981, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r996, %r994, 0;
+	{ mad.lo.s32 %r1989, %r1985, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r998, %r996, 7;
+	{ mad.lo.s32 %r1993, %r1989, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r1000, %r998, 0;
+	{ mad.lo.s32 %r1997, %r1993, %r6, %r7; }
 	// end inline asm
-	.loc	1 120 12
 	// begin inline asm
-	add.cc.u32 %r1002, %r1000, 7;
+	{ mad.lo.s32 %r2001, %r1997, %r6, %r7; }
 	// end inline asm
-	.loc	1 128 12
 	// begin inline asm
-	addc.u32 %r1003, %r1002, 0;
+	{ mad.lo.s32 %r2000, %r2001, %r6, %r7; }
 	// end inline asm
 $L__tmp132:
 	.loc	1 31 8
@@ -2906,29 +2414,31 @@ $L__tmp132:
 	mov.u64 %rd74, %clock64;
 	// end inline asm
 $L__tmp133:
-	.loc	1 131 27
+	.loc	1 121 27
+	cvt.rn.f32.s32 	%f2, %r2000;
+	mov.b32 	%r2004, %f2;
 	// begin inline asm
-	@%p1 st.global.b32 [ %rd68 + 0 ], { %r1003 };
+	@%p1 st.global.b32 [ %rd68 + 0 ], { %r2004 };
 	// end inline asm
-	.loc	1 133 22
+	.loc	1 123 22
 	add.s64 	%rd73, %rd77, %rd271;
-	.loc	1 133 28
+	.loc	1 123 28
 	// begin inline asm
 	@%p1 st.global.b64 [ %rd73 + 0 ], { %rd72 };
 	// end inline asm
-	.loc	1 134 22
+	.loc	1 124 22
 	add.s64 	%rd75, %rd78, %rd271;
-	.loc	1 134 28
+	.loc	1 124 28
 	// begin inline asm
 	@%p1 st.global.b64 [ %rd75 + 0 ], { %rd74 };
 	// end inline asm
-	.loc	1 134 4
+	.loc	1 124 4
 	ret;
 $L__tmp134:
 $L__func_end0:
 
 }
-	.file	1 "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IADD/minimal_test2.py"
+	.file	1 "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD/minimal_test8.py"
 	.section	.debug_abbrev
 	{
 .b8 1
@@ -3018,7 +2528,7 @@ $L__func_end0:
 .b8 101
 .b8 115
 .b8 116
-.b8 50
+.b8 56
 .b8 46
 .b8 112
 .b8 121
@@ -3100,8 +2610,8 @@ $L__func_end0:
 .b8 108
 .b8 95
 .b8 73
+.b8 77
 .b8 65
-.b8 68
 .b8 68
 .b8 0
 .b64 $L__func_begin0
@@ -3144,28 +2654,28 @@ $L__func_end0:
 .b64 $L__tmp1
 .b64 $L__tmp2
 .b8 1
-.b8 98
+.b8 95
 .b8 13
 .b8 4
 .b32 138
 .b64 $L__tmp2
 .b64 $L__tmp129
 .b8 1
-.b8 101
+.b8 98
 .b8 16
 .b8 4
 .b32 138
 .b64 $L__tmp130
 .b64 $L__tmp131
 .b8 1
-.b8 112
+.b8 110
 .b8 9
 .b8 4
 .b32 138
 .b64 $L__tmp132
 .b64 $L__tmp133
 .b8 1
-.b8 130
+.b8 120
 .b8 9
 .b8 0
 .b8 0

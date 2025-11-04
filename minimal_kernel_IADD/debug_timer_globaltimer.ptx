@@ -902,2003 +902,2003 @@ $L__tmp130:
 $L__tmp131:
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r6, %r4, 7;
+	add.cc.u32 %r6, %r4, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r8, %r6, 7;
+	addc.u32 %r8, %r6, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r10, %r8, 7;
+	add.cc.u32 %r10, %r8, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r12, %r10, 7;
+	addc.u32 %r12, %r10, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r14, %r12, 7;
+	add.cc.u32 %r14, %r12, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r16, %r14, 7;
+	addc.u32 %r16, %r14, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r18, %r16, 7;
+	add.cc.u32 %r18, %r16, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r20, %r18, 7;
+	addc.u32 %r20, %r18, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r22, %r20, 7;
+	add.cc.u32 %r22, %r20, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r24, %r22, 7;
+	addc.u32 %r24, %r22, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r26, %r24, 7;
+	add.cc.u32 %r26, %r24, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r28, %r26, 7;
+	addc.u32 %r28, %r26, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r30, %r28, 7;
+	add.cc.u32 %r30, %r28, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r32, %r30, 7;
+	addc.u32 %r32, %r30, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r34, %r32, 7;
+	add.cc.u32 %r34, %r32, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r36, %r34, 7;
+	addc.u32 %r36, %r34, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r38, %r36, 7;
+	add.cc.u32 %r38, %r36, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r40, %r38, 7;
+	addc.u32 %r40, %r38, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r42, %r40, 7;
+	add.cc.u32 %r42, %r40, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r44, %r42, 7;
+	addc.u32 %r44, %r42, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r46, %r44, 7;
+	add.cc.u32 %r46, %r44, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r48, %r46, 7;
+	addc.u32 %r48, %r46, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r50, %r48, 7;
+	add.cc.u32 %r50, %r48, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r52, %r50, 7;
+	addc.u32 %r52, %r50, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r54, %r52, 7;
+	add.cc.u32 %r54, %r52, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r56, %r54, 7;
+	addc.u32 %r56, %r54, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r58, %r56, 7;
+	add.cc.u32 %r58, %r56, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r60, %r58, 7;
+	addc.u32 %r60, %r58, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r62, %r60, 7;
+	add.cc.u32 %r62, %r60, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r64, %r62, 7;
+	addc.u32 %r64, %r62, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r66, %r64, 7;
+	add.cc.u32 %r66, %r64, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r68, %r66, 7;
+	addc.u32 %r68, %r66, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r70, %r68, 7;
+	add.cc.u32 %r70, %r68, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r72, %r70, 7;
+	addc.u32 %r72, %r70, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r74, %r72, 7;
+	add.cc.u32 %r74, %r72, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r76, %r74, 7;
+	addc.u32 %r76, %r74, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r78, %r76, 7;
+	add.cc.u32 %r78, %r76, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r80, %r78, 7;
+	addc.u32 %r80, %r78, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r82, %r80, 7;
+	add.cc.u32 %r82, %r80, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r84, %r82, 7;
+	addc.u32 %r84, %r82, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r86, %r84, 7;
+	add.cc.u32 %r86, %r84, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r88, %r86, 7;
+	addc.u32 %r88, %r86, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r90, %r88, 7;
+	add.cc.u32 %r90, %r88, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r92, %r90, 7;
+	addc.u32 %r92, %r90, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r94, %r92, 7;
+	add.cc.u32 %r94, %r92, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r96, %r94, 7;
+	addc.u32 %r96, %r94, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r98, %r96, 7;
+	add.cc.u32 %r98, %r96, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r100, %r98, 7;
+	addc.u32 %r100, %r98, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r102, %r100, 7;
+	add.cc.u32 %r102, %r100, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r104, %r102, 7;
+	addc.u32 %r104, %r102, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r106, %r104, 7;
+	add.cc.u32 %r106, %r104, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r108, %r106, 7;
+	addc.u32 %r108, %r106, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r110, %r108, 7;
+	add.cc.u32 %r110, %r108, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r112, %r110, 7;
+	addc.u32 %r112, %r110, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r114, %r112, 7;
+	add.cc.u32 %r114, %r112, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r116, %r114, 7;
+	addc.u32 %r116, %r114, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r118, %r116, 7;
+	add.cc.u32 %r118, %r116, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r120, %r118, 7;
+	addc.u32 %r120, %r118, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r122, %r120, 7;
+	add.cc.u32 %r122, %r120, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r124, %r122, 7;
+	addc.u32 %r124, %r122, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r126, %r124, 7;
+	add.cc.u32 %r126, %r124, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r128, %r126, 7;
+	addc.u32 %r128, %r126, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r130, %r128, 7;
+	add.cc.u32 %r130, %r128, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r132, %r130, 7;
+	addc.u32 %r132, %r130, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r134, %r132, 7;
+	add.cc.u32 %r134, %r132, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r136, %r134, 7;
+	addc.u32 %r136, %r134, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r138, %r136, 7;
+	add.cc.u32 %r138, %r136, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r140, %r138, 7;
+	addc.u32 %r140, %r138, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r142, %r140, 7;
+	add.cc.u32 %r142, %r140, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r144, %r142, 7;
+	addc.u32 %r144, %r142, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r146, %r144, 7;
+	add.cc.u32 %r146, %r144, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r148, %r146, 7;
+	addc.u32 %r148, %r146, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r150, %r148, 7;
+	add.cc.u32 %r150, %r148, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r152, %r150, 7;
+	addc.u32 %r152, %r150, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r154, %r152, 7;
+	add.cc.u32 %r154, %r152, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r156, %r154, 7;
+	addc.u32 %r156, %r154, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r158, %r156, 7;
+	add.cc.u32 %r158, %r156, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r160, %r158, 7;
+	addc.u32 %r160, %r158, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r162, %r160, 7;
+	add.cc.u32 %r162, %r160, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r164, %r162, 7;
+	addc.u32 %r164, %r162, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r166, %r164, 7;
+	add.cc.u32 %r166, %r164, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r168, %r166, 7;
+	addc.u32 %r168, %r166, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r170, %r168, 7;
+	add.cc.u32 %r170, %r168, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r172, %r170, 7;
+	addc.u32 %r172, %r170, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r174, %r172, 7;
+	add.cc.u32 %r174, %r172, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r176, %r174, 7;
+	addc.u32 %r176, %r174, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r178, %r176, 7;
+	add.cc.u32 %r178, %r176, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r180, %r178, 7;
+	addc.u32 %r180, %r178, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r182, %r180, 7;
+	add.cc.u32 %r182, %r180, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r184, %r182, 7;
+	addc.u32 %r184, %r182, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r186, %r184, 7;
+	add.cc.u32 %r186, %r184, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r188, %r186, 7;
+	addc.u32 %r188, %r186, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r190, %r188, 7;
+	add.cc.u32 %r190, %r188, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r192, %r190, 7;
+	addc.u32 %r192, %r190, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r194, %r192, 7;
+	add.cc.u32 %r194, %r192, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r196, %r194, 7;
+	addc.u32 %r196, %r194, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r198, %r196, 7;
+	add.cc.u32 %r198, %r196, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r200, %r198, 7;
+	addc.u32 %r200, %r198, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r202, %r200, 7;
+	add.cc.u32 %r202, %r200, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r204, %r202, 7;
+	addc.u32 %r204, %r202, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r206, %r204, 7;
+	add.cc.u32 %r206, %r204, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r208, %r206, 7;
+	addc.u32 %r208, %r206, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r210, %r208, 7;
+	add.cc.u32 %r210, %r208, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r212, %r210, 7;
+	addc.u32 %r212, %r210, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r214, %r212, 7;
+	add.cc.u32 %r214, %r212, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r216, %r214, 7;
+	addc.u32 %r216, %r214, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r218, %r216, 7;
+	add.cc.u32 %r218, %r216, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r220, %r218, 7;
+	addc.u32 %r220, %r218, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r222, %r220, 7;
+	add.cc.u32 %r222, %r220, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r224, %r222, 7;
+	addc.u32 %r224, %r222, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r226, %r224, 7;
+	add.cc.u32 %r226, %r224, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r228, %r226, 7;
+	addc.u32 %r228, %r226, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r230, %r228, 7;
+	add.cc.u32 %r230, %r228, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r232, %r230, 7;
+	addc.u32 %r232, %r230, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r234, %r232, 7;
+	add.cc.u32 %r234, %r232, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r236, %r234, 7;
+	addc.u32 %r236, %r234, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r238, %r236, 7;
+	add.cc.u32 %r238, %r236, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r240, %r238, 7;
+	addc.u32 %r240, %r238, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r242, %r240, 7;
+	add.cc.u32 %r242, %r240, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r244, %r242, 7;
+	addc.u32 %r244, %r242, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r246, %r244, 7;
+	add.cc.u32 %r246, %r244, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r248, %r246, 7;
+	addc.u32 %r248, %r246, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r250, %r248, 7;
+	add.cc.u32 %r250, %r248, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r252, %r250, 7;
+	addc.u32 %r252, %r250, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r254, %r252, 7;
+	add.cc.u32 %r254, %r252, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r256, %r254, 7;
+	addc.u32 %r256, %r254, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r258, %r256, 7;
+	add.cc.u32 %r258, %r256, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r260, %r258, 7;
+	addc.u32 %r260, %r258, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r262, %r260, 7;
+	add.cc.u32 %r262, %r260, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r264, %r262, 7;
+	addc.u32 %r264, %r262, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r266, %r264, 7;
+	add.cc.u32 %r266, %r264, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r268, %r266, 7;
+	addc.u32 %r268, %r266, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r270, %r268, 7;
+	add.cc.u32 %r270, %r268, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r272, %r270, 7;
+	addc.u32 %r272, %r270, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r274, %r272, 7;
+	add.cc.u32 %r274, %r272, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r276, %r274, 7;
+	addc.u32 %r276, %r274, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r278, %r276, 7;
+	add.cc.u32 %r278, %r276, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r280, %r278, 7;
+	addc.u32 %r280, %r278, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r282, %r280, 7;
+	add.cc.u32 %r282, %r280, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r284, %r282, 7;
+	addc.u32 %r284, %r282, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r286, %r284, 7;
+	add.cc.u32 %r286, %r284, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r288, %r286, 7;
+	addc.u32 %r288, %r286, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r290, %r288, 7;
+	add.cc.u32 %r290, %r288, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r292, %r290, 7;
+	addc.u32 %r292, %r290, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r294, %r292, 7;
+	add.cc.u32 %r294, %r292, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r296, %r294, 7;
+	addc.u32 %r296, %r294, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r298, %r296, 7;
+	add.cc.u32 %r298, %r296, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r300, %r298, 7;
+	addc.u32 %r300, %r298, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r302, %r300, 7;
+	add.cc.u32 %r302, %r300, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r304, %r302, 7;
+	addc.u32 %r304, %r302, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r306, %r304, 7;
+	add.cc.u32 %r306, %r304, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r308, %r306, 7;
+	addc.u32 %r308, %r306, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r310, %r308, 7;
+	add.cc.u32 %r310, %r308, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r312, %r310, 7;
+	addc.u32 %r312, %r310, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r314, %r312, 7;
+	add.cc.u32 %r314, %r312, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r316, %r314, 7;
+	addc.u32 %r316, %r314, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r318, %r316, 7;
+	add.cc.u32 %r318, %r316, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r320, %r318, 7;
+	addc.u32 %r320, %r318, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r322, %r320, 7;
+	add.cc.u32 %r322, %r320, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r324, %r322, 7;
+	addc.u32 %r324, %r322, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r326, %r324, 7;
+	add.cc.u32 %r326, %r324, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r328, %r326, 7;
+	addc.u32 %r328, %r326, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r330, %r328, 7;
+	add.cc.u32 %r330, %r328, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r332, %r330, 7;
+	addc.u32 %r332, %r330, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r334, %r332, 7;
+	add.cc.u32 %r334, %r332, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r336, %r334, 7;
+	addc.u32 %r336, %r334, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r338, %r336, 7;
+	add.cc.u32 %r338, %r336, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r340, %r338, 7;
+	addc.u32 %r340, %r338, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r342, %r340, 7;
+	add.cc.u32 %r342, %r340, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r344, %r342, 7;
+	addc.u32 %r344, %r342, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r346, %r344, 7;
+	add.cc.u32 %r346, %r344, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r348, %r346, 7;
+	addc.u32 %r348, %r346, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r350, %r348, 7;
+	add.cc.u32 %r350, %r348, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r352, %r350, 7;
+	addc.u32 %r352, %r350, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r354, %r352, 7;
+	add.cc.u32 %r354, %r352, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r356, %r354, 7;
+	addc.u32 %r356, %r354, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r358, %r356, 7;
+	add.cc.u32 %r358, %r356, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r360, %r358, 7;
+	addc.u32 %r360, %r358, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r362, %r360, 7;
+	add.cc.u32 %r362, %r360, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r364, %r362, 7;
+	addc.u32 %r364, %r362, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r366, %r364, 7;
+	add.cc.u32 %r366, %r364, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r368, %r366, 7;
+	addc.u32 %r368, %r366, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r370, %r368, 7;
+	add.cc.u32 %r370, %r368, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r372, %r370, 7;
+	addc.u32 %r372, %r370, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r374, %r372, 7;
+	add.cc.u32 %r374, %r372, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r376, %r374, 7;
+	addc.u32 %r376, %r374, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r378, %r376, 7;
+	add.cc.u32 %r378, %r376, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r380, %r378, 7;
+	addc.u32 %r380, %r378, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r382, %r380, 7;
+	add.cc.u32 %r382, %r380, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r384, %r382, 7;
+	addc.u32 %r384, %r382, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r386, %r384, 7;
+	add.cc.u32 %r386, %r384, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r388, %r386, 7;
+	addc.u32 %r388, %r386, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r390, %r388, 7;
+	add.cc.u32 %r390, %r388, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r392, %r390, 7;
+	addc.u32 %r392, %r390, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r394, %r392, 7;
+	add.cc.u32 %r394, %r392, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r396, %r394, 7;
+	addc.u32 %r396, %r394, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r398, %r396, 7;
+	add.cc.u32 %r398, %r396, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r400, %r398, 7;
+	addc.u32 %r400, %r398, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r402, %r400, 7;
+	add.cc.u32 %r402, %r400, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r404, %r402, 7;
+	addc.u32 %r404, %r402, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r406, %r404, 7;
+	add.cc.u32 %r406, %r404, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r408, %r406, 7;
+	addc.u32 %r408, %r406, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r410, %r408, 7;
+	add.cc.u32 %r410, %r408, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r412, %r410, 7;
+	addc.u32 %r412, %r410, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r414, %r412, 7;
+	add.cc.u32 %r414, %r412, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r416, %r414, 7;
+	addc.u32 %r416, %r414, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r418, %r416, 7;
+	add.cc.u32 %r418, %r416, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r420, %r418, 7;
+	addc.u32 %r420, %r418, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r422, %r420, 7;
+	add.cc.u32 %r422, %r420, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r424, %r422, 7;
+	addc.u32 %r424, %r422, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r426, %r424, 7;
+	add.cc.u32 %r426, %r424, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r428, %r426, 7;
+	addc.u32 %r428, %r426, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r430, %r428, 7;
+	add.cc.u32 %r430, %r428, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r432, %r430, 7;
+	addc.u32 %r432, %r430, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r434, %r432, 7;
+	add.cc.u32 %r434, %r432, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r436, %r434, 7;
+	addc.u32 %r436, %r434, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r438, %r436, 7;
+	add.cc.u32 %r438, %r436, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r440, %r438, 7;
+	addc.u32 %r440, %r438, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r442, %r440, 7;
+	add.cc.u32 %r442, %r440, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r444, %r442, 7;
+	addc.u32 %r444, %r442, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r446, %r444, 7;
+	add.cc.u32 %r446, %r444, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r448, %r446, 7;
+	addc.u32 %r448, %r446, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r450, %r448, 7;
+	add.cc.u32 %r450, %r448, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r452, %r450, 7;
+	addc.u32 %r452, %r450, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r454, %r452, 7;
+	add.cc.u32 %r454, %r452, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r456, %r454, 7;
+	addc.u32 %r456, %r454, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r458, %r456, 7;
+	add.cc.u32 %r458, %r456, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r460, %r458, 7;
+	addc.u32 %r460, %r458, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r462, %r460, 7;
+	add.cc.u32 %r462, %r460, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r464, %r462, 7;
+	addc.u32 %r464, %r462, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r466, %r464, 7;
+	add.cc.u32 %r466, %r464, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r468, %r466, 7;
+	addc.u32 %r468, %r466, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r470, %r468, 7;
+	add.cc.u32 %r470, %r468, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r472, %r470, 7;
+	addc.u32 %r472, %r470, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r474, %r472, 7;
+	add.cc.u32 %r474, %r472, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r476, %r474, 7;
+	addc.u32 %r476, %r474, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r478, %r476, 7;
+	add.cc.u32 %r478, %r476, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r480, %r478, 7;
+	addc.u32 %r480, %r478, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r482, %r480, 7;
+	add.cc.u32 %r482, %r480, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r484, %r482, 7;
+	addc.u32 %r484, %r482, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r486, %r484, 7;
+	add.cc.u32 %r486, %r484, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r488, %r486, 7;
+	addc.u32 %r488, %r486, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r490, %r488, 7;
+	add.cc.u32 %r490, %r488, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r492, %r490, 7;
+	addc.u32 %r492, %r490, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r494, %r492, 7;
+	add.cc.u32 %r494, %r492, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r496, %r494, 7;
+	addc.u32 %r496, %r494, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r498, %r496, 7;
+	add.cc.u32 %r498, %r496, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r500, %r498, 7;
+	addc.u32 %r500, %r498, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r502, %r500, 7;
+	add.cc.u32 %r502, %r500, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r504, %r502, 7;
+	addc.u32 %r504, %r502, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r506, %r504, 7;
+	add.cc.u32 %r506, %r504, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r508, %r506, 7;
+	addc.u32 %r508, %r506, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r510, %r508, 7;
+	add.cc.u32 %r510, %r508, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r512, %r510, 7;
+	addc.u32 %r512, %r510, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r514, %r512, 7;
+	add.cc.u32 %r514, %r512, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r516, %r514, 7;
+	addc.u32 %r516, %r514, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r518, %r516, 7;
+	add.cc.u32 %r518, %r516, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r520, %r518, 7;
+	addc.u32 %r520, %r518, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r522, %r520, 7;
+	add.cc.u32 %r522, %r520, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r524, %r522, 7;
+	addc.u32 %r524, %r522, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r526, %r524, 7;
+	add.cc.u32 %r526, %r524, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r528, %r526, 7;
+	addc.u32 %r528, %r526, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r530, %r528, 7;
+	add.cc.u32 %r530, %r528, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r532, %r530, 7;
+	addc.u32 %r532, %r530, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r534, %r532, 7;
+	add.cc.u32 %r534, %r532, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r536, %r534, 7;
+	addc.u32 %r536, %r534, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r538, %r536, 7;
+	add.cc.u32 %r538, %r536, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r540, %r538, 7;
+	addc.u32 %r540, %r538, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r542, %r540, 7;
+	add.cc.u32 %r542, %r540, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r544, %r542, 7;
+	addc.u32 %r544, %r542, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r546, %r544, 7;
+	add.cc.u32 %r546, %r544, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r548, %r546, 7;
+	addc.u32 %r548, %r546, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r550, %r548, 7;
+	add.cc.u32 %r550, %r548, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r552, %r550, 7;
+	addc.u32 %r552, %r550, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r554, %r552, 7;
+	add.cc.u32 %r554, %r552, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r556, %r554, 7;
+	addc.u32 %r556, %r554, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r558, %r556, 7;
+	add.cc.u32 %r558, %r556, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r560, %r558, 7;
+	addc.u32 %r560, %r558, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r562, %r560, 7;
+	add.cc.u32 %r562, %r560, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r564, %r562, 7;
+	addc.u32 %r564, %r562, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r566, %r564, 7;
+	add.cc.u32 %r566, %r564, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r568, %r566, 7;
+	addc.u32 %r568, %r566, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r570, %r568, 7;
+	add.cc.u32 %r570, %r568, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r572, %r570, 7;
+	addc.u32 %r572, %r570, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r574, %r572, 7;
+	add.cc.u32 %r574, %r572, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r576, %r574, 7;
+	addc.u32 %r576, %r574, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r578, %r576, 7;
+	add.cc.u32 %r578, %r576, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r580, %r578, 7;
+	addc.u32 %r580, %r578, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r582, %r580, 7;
+	add.cc.u32 %r582, %r580, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r584, %r582, 7;
+	addc.u32 %r584, %r582, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r586, %r584, 7;
+	add.cc.u32 %r586, %r584, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r588, %r586, 7;
+	addc.u32 %r588, %r586, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r590, %r588, 7;
+	add.cc.u32 %r590, %r588, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r592, %r590, 7;
+	addc.u32 %r592, %r590, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r594, %r592, 7;
+	add.cc.u32 %r594, %r592, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r596, %r594, 7;
+	addc.u32 %r596, %r594, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r598, %r596, 7;
+	add.cc.u32 %r598, %r596, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r600, %r598, 7;
+	addc.u32 %r600, %r598, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r602, %r600, 7;
+	add.cc.u32 %r602, %r600, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r604, %r602, 7;
+	addc.u32 %r604, %r602, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r606, %r604, 7;
+	add.cc.u32 %r606, %r604, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r608, %r606, 7;
+	addc.u32 %r608, %r606, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r610, %r608, 7;
+	add.cc.u32 %r610, %r608, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r612, %r610, 7;
+	addc.u32 %r612, %r610, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r614, %r612, 7;
+	add.cc.u32 %r614, %r612, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r616, %r614, 7;
+	addc.u32 %r616, %r614, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r618, %r616, 7;
+	add.cc.u32 %r618, %r616, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r620, %r618, 7;
+	addc.u32 %r620, %r618, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r622, %r620, 7;
+	add.cc.u32 %r622, %r620, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r624, %r622, 7;
+	addc.u32 %r624, %r622, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r626, %r624, 7;
+	add.cc.u32 %r626, %r624, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r628, %r626, 7;
+	addc.u32 %r628, %r626, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r630, %r628, 7;
+	add.cc.u32 %r630, %r628, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r632, %r630, 7;
+	addc.u32 %r632, %r630, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r634, %r632, 7;
+	add.cc.u32 %r634, %r632, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r636, %r634, 7;
+	addc.u32 %r636, %r634, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r638, %r636, 7;
+	add.cc.u32 %r638, %r636, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r640, %r638, 7;
+	addc.u32 %r640, %r638, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r642, %r640, 7;
+	add.cc.u32 %r642, %r640, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r644, %r642, 7;
+	addc.u32 %r644, %r642, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r646, %r644, 7;
+	add.cc.u32 %r646, %r644, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r648, %r646, 7;
+	addc.u32 %r648, %r646, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r650, %r648, 7;
+	add.cc.u32 %r650, %r648, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r652, %r650, 7;
+	addc.u32 %r652, %r650, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r654, %r652, 7;
+	add.cc.u32 %r654, %r652, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r656, %r654, 7;
+	addc.u32 %r656, %r654, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r658, %r656, 7;
+	add.cc.u32 %r658, %r656, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r660, %r658, 7;
+	addc.u32 %r660, %r658, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r662, %r660, 7;
+	add.cc.u32 %r662, %r660, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r664, %r662, 7;
+	addc.u32 %r664, %r662, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r666, %r664, 7;
+	add.cc.u32 %r666, %r664, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r668, %r666, 7;
+	addc.u32 %r668, %r666, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r670, %r668, 7;
+	add.cc.u32 %r670, %r668, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r672, %r670, 7;
+	addc.u32 %r672, %r670, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r674, %r672, 7;
+	add.cc.u32 %r674, %r672, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r676, %r674, 7;
+	addc.u32 %r676, %r674, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r678, %r676, 7;
+	add.cc.u32 %r678, %r676, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r680, %r678, 7;
+	addc.u32 %r680, %r678, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r682, %r680, 7;
+	add.cc.u32 %r682, %r680, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r684, %r682, 7;
+	addc.u32 %r684, %r682, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r686, %r684, 7;
+	add.cc.u32 %r686, %r684, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r688, %r686, 7;
+	addc.u32 %r688, %r686, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r690, %r688, 7;
+	add.cc.u32 %r690, %r688, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r692, %r690, 7;
+	addc.u32 %r692, %r690, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r694, %r692, 7;
+	add.cc.u32 %r694, %r692, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r696, %r694, 7;
+	addc.u32 %r696, %r694, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r698, %r696, 7;
+	add.cc.u32 %r698, %r696, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r700, %r698, 7;
+	addc.u32 %r700, %r698, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r702, %r700, 7;
+	add.cc.u32 %r702, %r700, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r704, %r702, 7;
+	addc.u32 %r704, %r702, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r706, %r704, 7;
+	add.cc.u32 %r706, %r704, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r708, %r706, 7;
+	addc.u32 %r708, %r706, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r710, %r708, 7;
+	add.cc.u32 %r710, %r708, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r712, %r710, 7;
+	addc.u32 %r712, %r710, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r714, %r712, 7;
+	add.cc.u32 %r714, %r712, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r716, %r714, 7;
+	addc.u32 %r716, %r714, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r718, %r716, 7;
+	add.cc.u32 %r718, %r716, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r720, %r718, 7;
+	addc.u32 %r720, %r718, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r722, %r720, 7;
+	add.cc.u32 %r722, %r720, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r724, %r722, 7;
+	addc.u32 %r724, %r722, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r726, %r724, 7;
+	add.cc.u32 %r726, %r724, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r728, %r726, 7;
+	addc.u32 %r728, %r726, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r730, %r728, 7;
+	add.cc.u32 %r730, %r728, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r732, %r730, 7;
+	addc.u32 %r732, %r730, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r734, %r732, 7;
+	add.cc.u32 %r734, %r732, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r736, %r734, 7;
+	addc.u32 %r736, %r734, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r738, %r736, 7;
+	add.cc.u32 %r738, %r736, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r740, %r738, 7;
+	addc.u32 %r740, %r738, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r742, %r740, 7;
+	add.cc.u32 %r742, %r740, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r744, %r742, 7;
+	addc.u32 %r744, %r742, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r746, %r744, 7;
+	add.cc.u32 %r746, %r744, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r748, %r746, 7;
+	addc.u32 %r748, %r746, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r750, %r748, 7;
+	add.cc.u32 %r750, %r748, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r752, %r750, 7;
+	addc.u32 %r752, %r750, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r754, %r752, 7;
+	add.cc.u32 %r754, %r752, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r756, %r754, 7;
+	addc.u32 %r756, %r754, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r758, %r756, 7;
+	add.cc.u32 %r758, %r756, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r760, %r758, 7;
+	addc.u32 %r760, %r758, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r762, %r760, 7;
+	add.cc.u32 %r762, %r760, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r764, %r762, 7;
+	addc.u32 %r764, %r762, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r766, %r764, 7;
+	add.cc.u32 %r766, %r764, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r768, %r766, 7;
+	addc.u32 %r768, %r766, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r770, %r768, 7;
+	add.cc.u32 %r770, %r768, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r772, %r770, 7;
+	addc.u32 %r772, %r770, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r774, %r772, 7;
+	add.cc.u32 %r774, %r772, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r776, %r774, 7;
+	addc.u32 %r776, %r774, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r778, %r776, 7;
+	add.cc.u32 %r778, %r776, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r780, %r778, 7;
+	addc.u32 %r780, %r778, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r782, %r780, 7;
+	add.cc.u32 %r782, %r780, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r784, %r782, 7;
+	addc.u32 %r784, %r782, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r786, %r784, 7;
+	add.cc.u32 %r786, %r784, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r788, %r786, 7;
+	addc.u32 %r788, %r786, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r790, %r788, 7;
+	add.cc.u32 %r790, %r788, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r792, %r790, 7;
+	addc.u32 %r792, %r790, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r794, %r792, 7;
+	add.cc.u32 %r794, %r792, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r796, %r794, 7;
+	addc.u32 %r796, %r794, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r798, %r796, 7;
+	add.cc.u32 %r798, %r796, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r800, %r798, 7;
+	addc.u32 %r800, %r798, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r802, %r800, 7;
+	add.cc.u32 %r802, %r800, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r804, %r802, 7;
+	addc.u32 %r804, %r802, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r806, %r804, 7;
+	add.cc.u32 %r806, %r804, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r808, %r806, 7;
+	addc.u32 %r808, %r806, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r810, %r808, 7;
+	add.cc.u32 %r810, %r808, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r812, %r810, 7;
+	addc.u32 %r812, %r810, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r814, %r812, 7;
+	add.cc.u32 %r814, %r812, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r816, %r814, 7;
+	addc.u32 %r816, %r814, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r818, %r816, 7;
+	add.cc.u32 %r818, %r816, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r820, %r818, 7;
+	addc.u32 %r820, %r818, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r822, %r820, 7;
+	add.cc.u32 %r822, %r820, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r824, %r822, 7;
+	addc.u32 %r824, %r822, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r826, %r824, 7;
+	add.cc.u32 %r826, %r824, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r828, %r826, 7;
+	addc.u32 %r828, %r826, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r830, %r828, 7;
+	add.cc.u32 %r830, %r828, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r832, %r830, 7;
+	addc.u32 %r832, %r830, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r834, %r832, 7;
+	add.cc.u32 %r834, %r832, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r836, %r834, 7;
+	addc.u32 %r836, %r834, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r838, %r836, 7;
+	add.cc.u32 %r838, %r836, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r840, %r838, 7;
+	addc.u32 %r840, %r838, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r842, %r840, 7;
+	add.cc.u32 %r842, %r840, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r844, %r842, 7;
+	addc.u32 %r844, %r842, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r846, %r844, 7;
+	add.cc.u32 %r846, %r844, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r848, %r846, 7;
+	addc.u32 %r848, %r846, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r850, %r848, 7;
+	add.cc.u32 %r850, %r848, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r852, %r850, 7;
+	addc.u32 %r852, %r850, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r854, %r852, 7;
+	add.cc.u32 %r854, %r852, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r856, %r854, 7;
+	addc.u32 %r856, %r854, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r858, %r856, 7;
+	add.cc.u32 %r858, %r856, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r860, %r858, 7;
+	addc.u32 %r860, %r858, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r862, %r860, 7;
+	add.cc.u32 %r862, %r860, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r864, %r862, 7;
+	addc.u32 %r864, %r862, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r866, %r864, 7;
+	add.cc.u32 %r866, %r864, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r868, %r866, 7;
+	addc.u32 %r868, %r866, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r870, %r868, 7;
+	add.cc.u32 %r870, %r868, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r872, %r870, 7;
+	addc.u32 %r872, %r870, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r874, %r872, 7;
+	add.cc.u32 %r874, %r872, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r876, %r874, 7;
+	addc.u32 %r876, %r874, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r878, %r876, 7;
+	add.cc.u32 %r878, %r876, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r880, %r878, 7;
+	addc.u32 %r880, %r878, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r882, %r880, 7;
+	add.cc.u32 %r882, %r880, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r884, %r882, 7;
+	addc.u32 %r884, %r882, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r886, %r884, 7;
+	add.cc.u32 %r886, %r884, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r888, %r886, 7;
+	addc.u32 %r888, %r886, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r890, %r888, 7;
+	add.cc.u32 %r890, %r888, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r892, %r890, 7;
+	addc.u32 %r892, %r890, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r894, %r892, 7;
+	add.cc.u32 %r894, %r892, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r896, %r894, 7;
+	addc.u32 %r896, %r894, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r898, %r896, 7;
+	add.cc.u32 %r898, %r896, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r900, %r898, 7;
+	addc.u32 %r900, %r898, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r902, %r900, 7;
+	add.cc.u32 %r902, %r900, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r904, %r902, 7;
+	addc.u32 %r904, %r902, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r906, %r904, 7;
+	add.cc.u32 %r906, %r904, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r908, %r906, 7;
+	addc.u32 %r908, %r906, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r910, %r908, 7;
+	add.cc.u32 %r910, %r908, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r912, %r910, 7;
+	addc.u32 %r912, %r910, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r914, %r912, 7;
+	add.cc.u32 %r914, %r912, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r916, %r914, 7;
+	addc.u32 %r916, %r914, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r918, %r916, 7;
+	add.cc.u32 %r918, %r916, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r920, %r918, 7;
+	addc.u32 %r920, %r918, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r922, %r920, 7;
+	add.cc.u32 %r922, %r920, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r924, %r922, 7;
+	addc.u32 %r924, %r922, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r926, %r924, 7;
+	add.cc.u32 %r926, %r924, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r928, %r926, 7;
+	addc.u32 %r928, %r926, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r930, %r928, 7;
+	add.cc.u32 %r930, %r928, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r932, %r930, 7;
+	addc.u32 %r932, %r930, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r934, %r932, 7;
+	add.cc.u32 %r934, %r932, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r936, %r934, 7;
+	addc.u32 %r936, %r934, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r938, %r936, 7;
+	add.cc.u32 %r938, %r936, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r940, %r938, 7;
+	addc.u32 %r940, %r938, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r942, %r940, 7;
+	add.cc.u32 %r942, %r940, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r944, %r942, 7;
+	addc.u32 %r944, %r942, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r946, %r944, 7;
+	add.cc.u32 %r946, %r944, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r948, %r946, 7;
+	addc.u32 %r948, %r946, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r950, %r948, 7;
+	add.cc.u32 %r950, %r948, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r952, %r950, 7;
+	addc.u32 %r952, %r950, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r954, %r952, 7;
+	add.cc.u32 %r954, %r952, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r956, %r954, 7;
+	addc.u32 %r956, %r954, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r958, %r956, 7;
+	add.cc.u32 %r958, %r956, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r960, %r958, 7;
+	addc.u32 %r960, %r958, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r962, %r960, 7;
+	add.cc.u32 %r962, %r960, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r964, %r962, 7;
+	addc.u32 %r964, %r962, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r966, %r964, 7;
+	add.cc.u32 %r966, %r964, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r968, %r966, 7;
+	addc.u32 %r968, %r966, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r970, %r968, 7;
+	add.cc.u32 %r970, %r968, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r972, %r970, 7;
+	addc.u32 %r972, %r970, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r974, %r972, 7;
+	add.cc.u32 %r974, %r972, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r976, %r974, 7;
+	addc.u32 %r976, %r974, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r978, %r976, 7;
+	add.cc.u32 %r978, %r976, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r980, %r978, 7;
+	addc.u32 %r980, %r978, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r982, %r980, 7;
+	add.cc.u32 %r982, %r980, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r984, %r982, 7;
+	addc.u32 %r984, %r982, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r986, %r984, 7;
+	add.cc.u32 %r986, %r984, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r988, %r986, 7;
+	addc.u32 %r988, %r986, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r990, %r988, 7;
+	add.cc.u32 %r990, %r988, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r992, %r990, 7;
+	addc.u32 %r992, %r990, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r994, %r992, 7;
+	add.cc.u32 %r994, %r992, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r996, %r994, 7;
+	addc.u32 %r996, %r994, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r998, %r996, 7;
+	add.cc.u32 %r998, %r996, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r1000, %r998, 7;
+	addc.u32 %r1000, %r998, 0;
 	// end inline asm
 	.loc	1 69 12
 	// begin inline asm
-	add.u32 %r1002, %r1000, 7;
+	add.cc.u32 %r1002, %r1000, 7;
 	// end inline asm
 	.loc	1 77 12
 	// begin inline asm
-	add.u32 %r1003, %r1002, 7;
+	addc.u32 %r1003, %r1002, 0;
 	// end inline asm
 $L__tmp132:
 	.loc	1 19 8
@@ -2910,19 +2910,19 @@ $L__tmp133:
 	// begin inline asm
 	@%p1 st.global.b32 [ %rd68 + 0 ], { %r1003 };
 	// end inline asm
-	.loc	1 81 22
+	.loc	1 82 22
 	add.s64 	%rd73, %rd77, %rd271;
-	.loc	1 81 28
+	.loc	1 82 28
 	// begin inline asm
 	@%p1 st.global.b64 [ %rd73 + 0 ], { %rd72 };
 	// end inline asm
-	.loc	1 82 22
+	.loc	1 83 22
 	add.s64 	%rd75, %rd78, %rd271;
-	.loc	1 82 28
+	.loc	1 83 28
 	// begin inline asm
 	@%p1 st.global.b64 [ %rd75 + 0 ], { %rd74 };
 	// end inline asm
-	.loc	1 82 4
+	.loc	1 83 4
 	ret;
 $L__tmp134:
 $L__func_end0:

@@ -1,0 +1,8 @@
+
+#This allows to read current frequency of GPU
+nvidia-smi --query-gpu=clocks.current.graphics --format=csv
+
+
+#this convrts ptx to SASS
+
+nvdisasm --print-code --print-line-info toy_kernel.cubin > toy_kernel.sass
