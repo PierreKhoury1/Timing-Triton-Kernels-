@@ -56,21 +56,28 @@ def debug_timer_globaltimer_kernel(
     tl.store(tick_ptr + offs, min_d, mask=m)
 
     # Arithmetic-only bracket
+    # 2) arithmetic region: FADD then FFMA, both dependent
     x = tl.load(x_ptr + offs, mask=m, other=0.0).to(tl.float32)
 
-    # choose some FP constants for the FMA
-    # x = x * 1.0009765625 + 0.5   (just nontrivial constants)
-    a = tl.full([BLOCK], 1.0009765625, tl.float32)
-    b = tl.full([BLOCK], 0.5, tl.float32)
-
+    add_c = tl.full([BLOCK], 1.0, tl.float32)
+    mul_c = tl.full([BLOCK], 1.0009765625, tl.float32)
+    add2  = tl.full([BLOCK], 0.5, tl.float32)
     t0 = _read_globaltimer()
     for _ in tl.static_range(REPS):
-        # PTX-ish: fma.rn.f32 dst, a, b, c  -> dst = a * b + c
-        # here we do: x = x * a + b
+                # x = x + 1.0
+        x = tl.inline_asm_elementwise(
+            "{ add.f32 $0, $1, $2; }",
+            constraints="=f,f,f",
+            args=[x, add_c],
+            dtype=tl.float32,
+            is_pure=False,
+            pack=1,
+        )
+        # x = x * mul_c + add2
         x = tl.inline_asm_elementwise(
             "{ fma.rn.f32 $0, $1, $2, $3; }",
             constraints="=f,f,f,f",
-            args=[x, a, b],
+            args=[x, mul_c, add2],
             dtype=tl.float32,
             is_pure=False,
             pack=1,
@@ -168,7 +175,7 @@ def main():
 
     # Config
     N = 32; BLOCK = 32
-    REPS = 500
+    REPS = 250
     REPS_CLOCK64 = 500
     K_TICK = 64
     K_TICK_CLOCK64 = 64
