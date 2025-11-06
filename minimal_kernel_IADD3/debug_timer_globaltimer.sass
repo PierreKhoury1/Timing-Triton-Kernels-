@@ -1,0 +1,1547 @@
+	.headerflags	@"EF_CUDA_TEXMODE_UNIFIED EF_CUDA_64BIT_ADDRESS EF_CUDA_SM86 EF_CUDA_VIRTUAL_SM(EF_CUDA_SM86)"
+	.elftype	@"ET_EXEC"
+
+
+//--------------------- .text.debug_timer_globaltimer_kernel --------------------------
+	.section	.text.debug_timer_globaltimer_kernel,"ax",@progbits
+	.sectioninfo	@"SHI_REGISTERS=16"
+	.align	128
+        .global         debug_timer_globaltimer_kernel
+        .type           debug_timer_globaltimer_kernel,@function
+        .size           debug_timer_globaltimer_kernel,(.L_x_1 - debug_timer_globaltimer_kernel)
+        .other          debug_timer_globaltimer_kernel,@"STO_CUDA_ENTRY STV_DEFAULT"
+debug_timer_globaltimer_kernel:
+.text.debug_timer_globaltimer_kernel:
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 39
+        /*0000*/                   IMAD.MOV.U32 R1, RZ, RZ, c[0x0][0x28] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 44
+        /*0010*/                   S2R R0, SR_TID.X ;
+        /*0020*/                   ULDC.64 UR4, c[0x0][0x118] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 43
+        /*0030*/                   S2R R3, SR_CTAID.X ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 44
+        /*0040*/                   LOP3.LUT R0, R0, 0x1f, RZ, 0xc0, !PT ;
+        /*0050*/                   IMAD R0, R3, 0x20, R0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 45
+        /*0060*/                   ISETP.GE.AND P1, PT, R0, 0x20, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0070*/                   CS2R R2, SR_GLOBALTIMERLO ;
+        /*0080*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0090*/                   IADD3 R6, P0, -R2, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*00a0*/                   ISETP.LT.U32.AND P2, PT, R6, -0x1, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*00b0*/                   IMAD.X R7, R5, 0x1, ~R3, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*00c0*/                   ISETP.NE.U32.AND P0, PT, R4, R2, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*00d0*/                   ISETP.LT.U32.AND.EX P2, PT, R7, 0x7fffffff, PT, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*00e0*/                   ISETP.NE.AND.EX P0, PT, R5, R3, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*00f0*/                   SEL R2, R6, 0xffffffff, P2 ;
+        /*0100*/                   SEL R3, R7, 0x7fffffff, P2 ;
+        /*0110*/                   SEL R2, R2, 0xffffffff, P0 ;
+        /*0120*/                   SEL R3, R3, 0x7fffffff, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0130*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0140*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0150*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0160*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0170*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0180*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0190*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*01a0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*01b0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*01c0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*01d0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*01e0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*01f0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0200*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0210*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0220*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0230*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0240*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0250*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0260*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0270*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0280*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0290*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*02a0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*02b0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*02c0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*02d0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*02e0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*02f0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0300*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0310*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0320*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0330*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0340*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0350*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0360*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0370*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0380*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0390*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*03a0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*03b0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*03c0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*03d0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*03e0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*03f0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0400*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0410*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0420*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0430*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0440*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0450*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0460*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0470*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0480*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0490*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*04a0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*04b0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*04c0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*04d0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*04e0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*04f0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0500*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0510*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0520*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0530*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0540*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0550*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0560*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0570*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0580*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0590*/               @P0 SEL R2, R9, R2, P2 ;
+        /*05a0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*05b0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*05c0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*05d0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*05e0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*05f0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0600*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0610*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0620*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0630*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0640*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0650*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0660*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0670*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0680*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0690*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*06a0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*06b0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*06c0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*06d0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*06e0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*06f0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0700*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0710*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0720*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0730*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0740*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0750*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0760*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0770*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0780*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0790*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*07a0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*07b0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*07c0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*07d0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*07e0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*07f0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0800*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0810*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0820*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0830*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0840*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0850*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0860*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0870*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0880*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0890*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*08a0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*08b0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*08c0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*08d0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*08e0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*08f0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0900*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0910*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0920*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0930*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0940*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0950*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0960*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0970*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0980*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0990*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*09a0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*09b0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*09c0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*09d0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*09e0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*09f0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0a00*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0a10*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0a20*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0a30*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0a40*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0a50*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0a60*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0a70*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0a80*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0a90*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0aa0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0ab0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0ac0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0ad0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0ae0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0af0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0b00*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0b10*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0b20*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0b30*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0b40*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0b50*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0b60*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0b70*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0b80*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0b90*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0ba0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0bb0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0bc0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0bd0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0be0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0bf0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0c00*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0c10*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0c20*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0c30*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0c40*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0c50*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0c60*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0c70*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0c80*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0c90*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0ca0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0cb0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0cc0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0cd0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0ce0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0cf0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0d00*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0d10*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0d20*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0d30*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0d40*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0d50*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0d60*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0d70*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0d80*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0d90*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0da0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0db0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0dc0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0dd0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0de0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0df0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0e00*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0e10*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0e20*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0e30*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0e40*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0e50*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0e60*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0e70*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0e80*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0e90*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0ea0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0eb0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0ec0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0ed0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0ee0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0ef0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0f00*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0f10*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*0f20*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0f30*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0f40*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0f50*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0f60*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0f70*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0f80*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*0f90*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*0fa0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*0fb0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*0fc0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*0fd0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*0fe0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*0ff0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1000*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1010*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1020*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1030*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1040*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1050*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1060*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1070*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1080*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1090*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*10a0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*10b0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*10c0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*10d0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*10e0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*10f0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1100*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1110*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1120*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1130*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1140*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1150*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1160*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1170*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1180*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1190*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*11a0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*11b0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*11c0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*11d0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*11e0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*11f0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1200*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1210*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1220*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1230*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1240*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1250*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1260*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1270*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1280*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1290*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*12a0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*12b0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*12c0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*12d0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*12e0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*12f0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1300*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1310*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1320*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1330*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1340*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1350*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1360*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1370*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1380*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1390*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*13a0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*13b0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*13c0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*13d0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*13e0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*13f0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1400*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1410*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1420*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1430*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1440*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1450*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1460*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1470*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1480*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1490*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*14a0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*14b0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*14c0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*14d0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*14e0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*14f0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1500*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1510*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1520*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1530*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1540*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1550*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1560*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1570*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1580*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1590*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*15a0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*15b0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*15c0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*15d0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*15e0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*15f0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1600*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1610*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1620*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1630*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1640*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1650*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1660*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1670*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1680*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1690*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*16a0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*16b0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*16c0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*16d0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*16e0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*16f0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1700*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1710*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1720*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1730*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1740*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1750*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1760*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1770*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1780*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1790*/               @P0 SEL R2, R9, R2, P2 ;
+        /*17a0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*17b0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*17c0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*17d0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*17e0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*17f0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1800*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1810*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1820*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1830*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1840*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1850*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1860*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1870*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1880*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1890*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*18a0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*18b0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*18c0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*18d0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*18e0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*18f0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1900*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1910*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1920*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1930*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1940*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1950*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1960*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1970*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1980*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1990*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*19a0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*19b0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*19c0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*19d0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*19e0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*19f0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1a00*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1a10*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1a20*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1a30*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1a40*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1a50*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1a60*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1a70*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1a80*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1a90*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1aa0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1ab0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1ac0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1ad0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1ae0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1af0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1b00*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1b10*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1b20*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1b30*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1b40*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1b50*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1b60*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1b70*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1b80*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1b90*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1ba0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1bb0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1bc0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1bd0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1be0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1bf0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1c00*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1c10*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1c20*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1c30*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1c40*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1c50*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1c60*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1c70*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1c80*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1c90*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1ca0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1cb0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1cc0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1cd0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1ce0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1cf0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1d00*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1d10*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1d20*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1d30*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1d40*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1d50*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1d60*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1d70*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1d80*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1d90*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1da0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1db0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1dc0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1dd0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1de0*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1df0*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1e00*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1e10*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1e20*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1e30*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1e40*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1e50*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1e60*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1e70*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1e80*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1e90*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1ea0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1eb0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1ec0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1ed0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*1ee0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1ef0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1f00*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1f10*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1f20*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1f30*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1f40*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1f50*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1f60*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*1f70*/               @P0 SEL R2, R9, R2, P2 ;
+        /*1f80*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*1f90*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1fa0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1fb0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*1fc0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*1fd0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*1fe0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*1ff0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*2000*/               @P0 SEL R2, R9, R2, P2 ;
+        /*2010*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*2020*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2030*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2040*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2050*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2060*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*2070*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*2080*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*2090*/               @P0 SEL R2, R9, R2, P2 ;
+        /*20a0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*20b0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*20c0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*20d0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*20e0*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*20f0*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*2100*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*2110*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*2120*/               @P0 SEL R2, R9, R2, P2 ;
+        /*2130*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*2140*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2150*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2160*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2170*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2180*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*2190*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*21a0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*21b0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*21c0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*21d0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*21e0*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*21f0*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2200*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2210*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*2220*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*2230*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*2240*/               @P0 SEL R2, R9, R2, P2 ;
+        /*2250*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*2260*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2270*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2280*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2290*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*22a0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*22b0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*22c0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*22d0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*22e0*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*22f0*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2300*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2310*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2320*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2330*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*2340*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*2350*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*2360*/               @P0 SEL R2, R9, R2, P2 ;
+        /*2370*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*2380*/                   CS2R R4, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2390*/                   ISETP.NE.U32.AND P0, PT, R4, R6, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*23a0*/                   IADD3 R9, P2, -R6, R4, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*23b0*/                   ISETP.NE.AND.EX P0, PT, R5, R7, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*23c0*/                   IMAD.X R6, R5, 0x1, ~R7, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*23d0*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+        /*23e0*/                   ISETP.LT.U32.AND.EX P2, PT, R6, R3, PT, P2 ;
+        /*23f0*/               @P0 SEL R2, R9, R2, P2 ;
+        /*2400*/               @P0 SEL R3, R6, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*2410*/                   CS2R R6, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2420*/                   ISETP.NE.U32.AND P0, PT, R6, R4, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2430*/                   IADD3 R9, P2, -R4, R6, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 59
+        /*2440*/                   IMAD.MOV.U32 R6, RZ, RZ, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 54
+        /*2450*/                   ISETP.NE.AND.EX P0, PT, R7, R5, PT, P0 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 52
+        /*2460*/                   IMAD.X R4, R7, 0x1, ~R5, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*2470*/                   ISETP.LT.U32.AND P2, PT, R9, R2, PT ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 56
+        /*2480*/                   IMAD.MOV.U32 R7, RZ, RZ, 0x8 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 59
+        /*2490*/                   IMAD.MOV.U32 R5, RZ, RZ, 0x4 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*24a0*/                   ISETP.LT.U32.AND.EX P2, PT, R4, R3, PT, P2 ;
+        /*24b0*/               @P0 SEL R2, R9, R2, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 56
+        /*24c0*/                   IMAD.WIDE R8, R0, R7, c[0x0][0x178] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 55
+        /*24d0*/               @P0 SEL R3, R4, R3, P2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 59
+        /*24e0*/                   IMAD.WIDE R4, R0.reuse, R5, c[0x0][0x160] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 56
+        /*24f0*/              @!P1 STG.E.64 [R8.64], R2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 59
+        /*2500*/              @!P1 LDG.E R6, [R4.64] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 60
+        /*2510*/                   IADD3 R12, R0, 0x1, RZ ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 59
+        /*2520*/                   SEL R6, R6, RZ, !P1 ;
+        /*2530*/                   F2I.U64.TRUNC R10, R6 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*2540*/                   CS2R R2, SR_GLOBALTIMERLO ;
+        /*2550*/                   IMAD.MOV.U32 R9, RZ, RZ, 0x11 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 67
+        /*2560*/                   IMAD.HI.U32 R6, R12, 0x11, RZ ;
+        /*2570*/                   IMAD R8, R0, R9, 0x11 ;
+        /*2580*/                   IADD3 R13, P0, P2, R8, R8, R10 ;
+        /*2590*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*25a0*/                   IADD3.X R9, R6, R6, R11, P0, P2 ;
+        /*25b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*25c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*25d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*25e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*25f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2600*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2610*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2620*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2630*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2640*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2650*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2660*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2670*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2680*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2690*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*26a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*26b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*26c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*26d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*26e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*26f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2700*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2710*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2720*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2730*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2740*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2750*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2760*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2770*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2780*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2790*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*27a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*27b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*27c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*27d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*27e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*27f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2800*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2810*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2820*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2830*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2840*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2850*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2860*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2870*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2880*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2890*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*28a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*28b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*28c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*28d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*28e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*28f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2900*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2910*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2920*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2930*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2940*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2950*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2960*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2970*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2980*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2990*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*29a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*29b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*29c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*29d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*29e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*29f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2a00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2a10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2a20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2a30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2a40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2a50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2a60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2a70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2a80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2a90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2aa0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2ab0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2ac0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2ad0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2ae0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2af0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2b00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2b10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2b20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2b30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2b40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2b50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2b60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2b70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2b80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2b90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2ba0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2bb0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2bc0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2bd0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2be0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2bf0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2c00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2c10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2c20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2c30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2c40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2c50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2c60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2c70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2c80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2c90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2ca0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2cb0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2cc0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2cd0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2ce0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2cf0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2d00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2d10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2d20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2d30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2d40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2d50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2d60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2d70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2d80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2d90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2da0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2db0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2dc0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2dd0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2de0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2df0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2e00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2e10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2e20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2e30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2e40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2e50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2e60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2e70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2e80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2e90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2ea0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2eb0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2ec0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2ed0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2ee0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2ef0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2f00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2f10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2f20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2f30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2f40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2f50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2f60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2f70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2f80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2f90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2fa0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2fb0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*2fc0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*2fd0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*2fe0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*2ff0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3000*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3010*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3020*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3030*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3040*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3050*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3060*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3070*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3080*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3090*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*30a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*30b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*30c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*30d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*30e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*30f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3100*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3110*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3120*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3130*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3140*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3150*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3160*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3170*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3180*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3190*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*31a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*31b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*31c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*31d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*31e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*31f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3200*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3210*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3220*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3230*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3240*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3250*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3260*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3270*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3280*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3290*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*32a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*32b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*32c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*32d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*32e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*32f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3300*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3310*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3320*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3330*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3340*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3350*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3360*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3370*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3380*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3390*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*33a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*33b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*33c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*33d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*33e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*33f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3400*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3410*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3420*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3430*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3440*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3450*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3460*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3470*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3480*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3490*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*34a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*34b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*34c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*34d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*34e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*34f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3500*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3510*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3520*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3530*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3540*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3550*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3560*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3570*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3580*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3590*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*35a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*35b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*35c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*35d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*35e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*35f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3600*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3610*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3620*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3630*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3640*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3650*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3660*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3670*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3680*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3690*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*36a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*36b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*36c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*36d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*36e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*36f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3700*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3710*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3720*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3730*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3740*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3750*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3760*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3770*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3780*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3790*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*37a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*37b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*37c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*37d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*37e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*37f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3800*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3810*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3820*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3830*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3840*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3850*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3860*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3870*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3880*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3890*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*38a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*38b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*38c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*38d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*38e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*38f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3900*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3910*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3920*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3930*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3940*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3950*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3960*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3970*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3980*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3990*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*39a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*39b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*39c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*39d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*39e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*39f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3a00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3a10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3a20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3a30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3a40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3a50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3a60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3a70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3a80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3a90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3aa0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3ab0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3ac0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3ad0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3ae0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3af0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3b00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3b10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3b20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3b30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3b40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3b50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3b60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3b70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3b80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3b90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3ba0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3bb0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3bc0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3bd0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3be0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3bf0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3c00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3c10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3c20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3c30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3c40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3c50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3c60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3c70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3c80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3c90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3ca0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3cb0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3cc0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3cd0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3ce0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3cf0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3d00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3d10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3d20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3d30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3d40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3d50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3d60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3d70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3d80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3d90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3da0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3db0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3dc0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3dd0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3de0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3df0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3e00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3e10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3e20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3e30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3e40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3e50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3e60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3e70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3e80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3e90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3ea0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3eb0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3ec0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3ed0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3ee0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3ef0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3f00*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3f10*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3f20*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3f30*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3f40*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3f50*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3f60*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3f70*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3f80*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3f90*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3fa0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3fb0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*3fc0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*3fd0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*3fe0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*3ff0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4000*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4010*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4020*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4030*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4040*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4050*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4060*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4070*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4080*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4090*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*40a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*40b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*40c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*40d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*40e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*40f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4100*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4110*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4120*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4130*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4140*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4150*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4160*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4170*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4180*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4190*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*41a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*41b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*41c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*41d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*41e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*41f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4200*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4210*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4220*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4230*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4240*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4250*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4260*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4270*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4280*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4290*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*42a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*42b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*42c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*42d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*42e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*42f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4300*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4310*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4320*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4330*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4340*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4350*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4360*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4370*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4380*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4390*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*43a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*43b0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*43c0*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*43d0*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*43e0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*43f0*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4400*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4410*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4420*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4430*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4440*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4450*/                   IADD3 R13, P3, P4, R8, R8, R13 ;
+        /*4460*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*4470*/                   IADD3 R13, P0, P2, R8, R8, R13 ;
+        /*4480*/                   IADD3.X R9, R6, R6, R9, P3, P4 ;
+        /*4490*/                   IADD3 R12, P3, P4, R8, R8, R13 ;
+        /*44a0*/                   IADD3.X R9, R6, R6, R9, P0, P2 ;
+        /*44b0*/                   IADD3.X R13, R6, R6, R9, P3, P4 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 19
+        /*44c0*/                   CS2R R10, SR_GLOBALTIMERLO ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 75
+        /*44d0*/                   I2F.U64 R13, R12 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 77
+        /*44e0*/                   IMAD.WIDE R8, R0, R7, c[0x0][0x168] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 78
+        /*44f0*/                   IMAD.WIDE R6, R0, R7, c[0x0][0x170] ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 75
+        /*4500*/              @!P1 STG.E [R4.64], R13 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 77
+        /*4510*/              @!P1 STG.E.64 [R8.64], R2 ;
+	//## File "/home/pierreisnotrock/Documents/triton_testing/triton_test1/minimal_kernel_IMAD_WIDE/minimal_test8.py", line 78
+        /*4520*/               @P1 EXIT ;
+        /*4530*/                   STG.E.64 [R6.64], R10 ;
+        /*4540*/                   EXIT ;
+.L_x_0:
+        /*4550*/                   BRA `(.L_x_0);
+        /*4560*/                   NOP;
+        /*4570*/                   NOP;
+        /*4580*/                   NOP;
+        /*4590*/                   NOP;
+        /*45a0*/                   NOP;
+        /*45b0*/                   NOP;
+        /*45c0*/                   NOP;
+        /*45d0*/                   NOP;
+        /*45e0*/                   NOP;
+        /*45f0*/                   NOP;
+.L_x_1:

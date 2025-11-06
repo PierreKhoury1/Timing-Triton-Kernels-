@@ -287,7 +287,7 @@ if __name__ == "__main__":
     # Configure your sweep here:
     sweep_repetitions_to_csv(
         reps_start=0,
-        reps_end=500,          # 0..500 inclusive => 501 runs
+        reps_end=1001,         
         reps_step=1,
         out_csv="sweep_results.csv",
         GHz=1.680,

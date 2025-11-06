@@ -20,6 +20,7 @@ def _read_globaltimer():
     )
     return t
 
+
 @triton.jit
 def _read_clock64():
     (c,) = tl.inline_asm_elementwise(
@@ -32,19 +33,22 @@ def _read_clock64():
     )
     return c
 
+
 # ============================
 # Kernel A: %globaltimer timing (ns), with tick probe
 # ============================
 @triton.jit
 def debug_timer_globaltimer_kernel(
-    x_ptr, t0_ptr, t1_ptr, tick_ptr,
+    x_ptr, y_ptr, t0_ptr, t1_ptr, tick_ptr,
     N: tl.constexpr, BLOCK: tl.constexpr, REPS: tl.constexpr, K_TICK: tl.constexpr
 ):
     pid = tl.program_id(0)
     offs = pid * BLOCK + tl.arange(0, BLOCK)
     m = offs < N
 
-    # Tick probe (back-to-back %globaltimer reads)
+    # ------------------------------------------------
+    # 1) Tick probe: back-to-back %globaltimer reads
+    # ------------------------------------------------
     t_prev = _read_globaltimer()
     min_d = tl.full([BLOCK], (1 << 63) - 1, tl.uint64)
     for _ in tl.static_range(K_TICK):
@@ -55,30 +59,36 @@ def debug_timer_globaltimer_kernel(
         min_d = tl.where(nz & (d < min_d), d, min_d)
     tl.store(tick_ptr + offs, min_d, mask=m)
 
-    # Arithmetic-only bracket
+    # ------------------------------------------------
+    # 2) Timed arithmetic region: dependent add.f32
+    # ------------------------------------------------
     x = tl.load(x_ptr + offs, mask=m, other=0.0).to(tl.float32)
+    #y = tl.load(y_ptr + offs, mask=m, other=0.0).to(tl.float32)
+
     t0 = _read_globaltimer()
     for _ in tl.static_range(REPS):
-	    (x,) = tl.inline_asm_elementwise(
-		asm="neg.f32 $0, $1;",   # x = -x
-		constraints="=f,f",
-		args=[x],
-		dtype=(tl.float32,),
-		is_pure=False,
-		pack=1,
-	    )
+        (x,) = tl.inline_asm_elementwise(
+            asm="neg.f32 $0, $1;",     # <--- FNEG
+            constraints="=f,f",        # 1 output, 1 input
+            args=[x],
+            dtype=(tl.float32,),
+            is_pure=False,             # keep it in the loop
+            pack=1,
+        )
     t1 = _read_globaltimer()
-    tl.store(x_ptr + offs, x, mask=m)
 
+    # store results
+    tl.store(x_ptr + offs, x, mask=m)
     tl.store(t0_ptr + offs, t0, mask=m)
     tl.store(t1_ptr + offs, t1, mask=m)
+
 
 # ============================
 # Kernel B: clock64() timing (cycles), with back-to-back probe
 # ============================
 @triton.jit
 def debug_timer_clock64_kernel(
-    x_ptr, c0_ptr, c1_ptr, clk_tick_ptr,
+    x_ptr,y_ptr, c0_ptr, c1_ptr, clk_tick_ptr,
     N: tl.constexpr, BLOCK: tl.constexpr, REPS: tl.constexpr, K_TICK: tl.constexpr
 ):
     pid = tl.program_id(0)
@@ -96,23 +106,26 @@ def debug_timer_clock64_kernel(
         min_dc = tl.where(nz & (d < min_dc), d, min_dc)
     tl.store(clk_tick_ptr + offs, min_dc, mask=m)
 
-    # Arithmetic-only bracket
+    # Arithmetic-only bracket (simple add to keep it readable)
     x = tl.load(x_ptr + offs, mask=m, other=0.0).to(tl.float32)
+    #y = tl.load(y_ptr + offs, mask=m, other=0.0).to(tl.float32)
+
     c0 = _read_clock64()
     for _ in tl.static_range(REPS):
-	    (x,) = tl.inline_asm_elementwise(
-		asm="neg.f32 $0, $1;",   # x = -x
-		constraints="=f,f",
-		args=[x],
-		dtype=(tl.float32,),
-		is_pure=False,
-		pack=1,
-	    )
+        (x,) = tl.inline_asm_elementwise(
+            asm="neg.f32 $0, $1;",     # <--- FNEG
+            constraints="=f,f",        # 1 output, 1 input
+            args=[x],
+            dtype=(tl.float32,),
+            is_pure=False,             # keep it in the loop
+            pack=1,
+        )
     c1 = _read_clock64()
-    tl.store(x_ptr + offs, x, mask=m)
 
+    tl.store(x_ptr + offs, x, mask=m)
     tl.store(c0_ptr + offs, c0, mask=m)
     tl.store(c1_ptr + offs, c1, mask=m)
+
 
 # ============================
 # Utils
@@ -120,25 +133,32 @@ def debug_timer_clock64_kernel(
 def _flatten_compiled_entries(cache_obj):
     found = []
     if hasattr(cache_obj, "asm") and isinstance(getattr(cache_obj, "asm"), dict):
-        found.append(cache_obj); return found
+        found.append(cache_obj)
+        return found
     if isinstance(cache_obj, dict):
-        for v in cache_obj.values(): found.extend(_flatten_compiled_entries(v))
+        for v in cache_obj.values():
+            found.extend(_flatten_compiled_entries(v))
     elif isinstance(cache_obj, (list, tuple)):
-        for v in cache_obj: found.extend(_flatten_compiled_entries(v))
+        for v in cache_obj:
+            found.extend(_flatten_compiled_entries(v))
     return found
 
+
 def _pick_best_for_device(compiled_entries):
-    if not compiled_entries: return None
+    if not compiled_entries:
+        return None
     for e in compiled_entries:
         asm = getattr(e, "asm", {})
         if isinstance(asm, dict) and asm.get("cubin") is not None:
             return e
     return compiled_entries[0]
 
+
 def _summarize_tick(dt_ns: np.ndarray, label: str):
     dt_ns = dt_ns[(dt_ns > 0)]
     if dt_ns.size == 0:
-        print(f"{label}: no non-zero samples"); return
+        print(f"{label}: no non-zero samples")
+        return
     vals, counts = np.unique(dt_ns, return_counts=True)
     mode_val = int(vals[counts.argmax()])
     gcd_core = int(np.gcd.reduce(vals[: min(50, vals.size)].astype(np.int64)))
@@ -149,6 +169,7 @@ def _summarize_tick(dt_ns: np.ndarray, label: str):
     print(f"  GCD-based quantum: {gcd_core} ns")
     status = "HIGH-RES" if gcd_core <= 64 else "DEFAULT"
     print(f"  status: {status}\n")
+
 
 # ============================
 # Main
@@ -161,14 +182,14 @@ def main():
     sm = f"sm_{cc[0]}{cc[1]}"
 
     # For ns conversion from cycles (only used to print ns/add for clock64)
-    # Adjust to your board or pin clocks with nvidia-smi -lgc
     GHz = 1.680
     ns_per_cycle = 1.0 / GHz
 
     # Config
-    N = 32; BLOCK = 32
-    REPS = 500
-    REPS_CLOCK64 = 500
+    N = 32
+    BLOCK = 32
+    REPS = 1001
+    REPS_CLOCK64 = 1001
     K_TICK = 64
     K_TICK_CLOCK64 = 64
     grid = (1,)
@@ -180,12 +201,14 @@ def main():
     # A) %globaltimer test (ns)
     # ----------------------------
     xA = torch.zeros(N, device="cuda", dtype=torch.float32)
+    # y can be anything — using 1.0 to make add.f32 do something non-trivial
+    yA = torch.ones(N, device="cuda", dtype=torch.float32)
     t0 = torch.empty(N, device="cuda", dtype=torch.uint64)
     t1 = torch.empty(N, device="cuda", dtype=torch.uint64)
     tick_ns = torch.empty(N, device="cuda", dtype=torch.uint64)
 
     debug_timer_globaltimer_kernel[grid](
-        xA, t0, t1, tick_ns,
+        xA, yA, t0, t1, tick_ns,
         N=N, BLOCK=BLOCK, REPS=REPS, K_TICK=K_TICK,
         num_warps=1, num_stages=1
     )
@@ -217,12 +240,16 @@ def main():
         ptxA = asmA.get("ptx", None)
         cubA = asmA.get("cubin", None)
         if ptxA:
-            with open("debug_timer_globaltimer.ptx", "w") as f: f.write(ptxA)
+            with open("debug_timer_globaltimer.ptx", "w") as f:
+                f.write(ptxA)
         if cubA is not None:
-            with open("debug_timer_globaltimer.cubin", "wb") as f: f.write(cubA)
+            with open("debug_timer_globaltimer.cubin", "wb") as f:
+                f.write(cubA)
         n_linesA = ptxA.count("\n") if ptxA else 0
-        print(f"✅ Wrote debug_timer_globaltimer.ptx ({n_linesA} lines)"
-              + (" and debug_timer_globaltimer.cubin" if cubA is not None else ""))
+        print(
+            f"✅ Wrote debug_timer_globaltimer.ptx ({n_linesA} lines)"
+            + (" and debug_timer_globaltimer.cubin" if cubA is not None else "")
+        )
         print("   Inspect via `grep -n GLOBALTIMER debug_timer_globaltimer.ptx` or "
               "`nvdisasm --print-line-info debug_timer_globaltimer.cubin`\n")
 
@@ -230,12 +257,13 @@ def main():
     # B) clock64() test (cycles)
     # ----------------------------
     xB = torch.zeros(N, device="cuda", dtype=torch.float32)
+    yB = torch.zeros(N, device="cuda", dtype=torch.float32)
     c0 = torch.empty(N, device="cuda", dtype=torch.uint64)
     c1 = torch.empty(N, device="cuda", dtype=torch.uint64)
     tick_cyc = torch.empty(N, device="cuda", dtype=torch.uint64)
 
     debug_timer_clock64_kernel[grid](
-        xB, c0, c1, tick_cyc,
+        xB, yB, c0, c1, tick_cyc,
         N=N, BLOCK=BLOCK, REPS=REPS_CLOCK64, K_TICK=K_TICK_CLOCK64,
         num_warps=1, num_stages=1
     )
@@ -266,14 +294,19 @@ def main():
         ptxB = asmB.get("ptx", None)
         cubB = asmB.get("cubin", None)
         if ptxB:
-            with open("debug_timer_clock64.ptx", "w") as f: f.write(ptxB)
+            with open("debug_timer_clock64.ptx", "w") as f:
+                f.write(ptxB)
         if cubB is not None:
-            with open("debug_timer_clock64.cubin", "wb") as f: f.write(cubB)
+            with open("debug_timer_clock64.cubin", "wb") as f:
+                f.write(cubB)
         n_linesB = ptxB.count("\n") if ptxB else 0
-        print(f"✅ Wrote debug_timer_clock64.ptx ({n_linesB} lines)"
-              + (" and debug_timer_clock64.cubin" if cubB is not None else ""))
+        print(
+            f"✅ Wrote debug_timer_clock64.ptx ({n_linesB} lines)"
+            + (" and debug_timer_clock64.cubin" if cubB is not None else "")
+        )
         print("   Inspect via `grep -n clock64 debug_timer_clock64.ptx` or "
               "`nvdisasm --print-line-info debug_timer_clock64.cubin`\n")
+
 
 if __name__ == "__main__":
     main()

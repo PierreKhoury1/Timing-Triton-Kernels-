@@ -153,8 +153,8 @@ def main():
 
     # Config
     N = 32; BLOCK = 32
-    REPS = 500
-    REPS_CLOCK64 = 500
+    REPS = 1001
+    REPS_CLOCK64 = 1001
     K_TICK = 64
     K_TICK_CLOCK64 = 64
     grid = (1,)
